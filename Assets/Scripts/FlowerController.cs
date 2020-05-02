@@ -14,7 +14,9 @@ public class FlowerController : MonoBehaviour
 	private FlowerState state = FlowerState.None;
 	private FlowerLeaf[] leafs;
 
-	private void Awake()
+	private bool animEnabled = true;
+
+	void Awake()
 	{
 		leafs = GetComponentsInChildren<FlowerLeaf>();
 		for(int i = 0; i < leafs.Length; i++)
@@ -25,13 +27,21 @@ public class FlowerController : MonoBehaviour
 		flowerFace.flower = this;
 	}
 
+	void LateUpdate()
+	{
+		if(animEnabled)
+		{
+			flowerAnchor.position = Vector3.MoveTowards(flowerAnchor.position, areaCenter.position, Time.deltaTime * 32f);
+		}
+	}
+
 	public bool CanInteract() { return state == FlowerState.None; }
 
 	public void SetState(FlowerState state) { this.state = state; }
 
 	public void SetAnimation(bool enabled)
 	{
-		if(enabled) flowerAnchor.position = areaCenter.position;
+		animEnabled = enabled;
 	}
 
 	public void MoveFace(Vector3 pos)
