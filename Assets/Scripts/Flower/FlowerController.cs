@@ -21,11 +21,12 @@ public class FlowerController : MonoBehaviour
 	private float _leafDragCenterOffset = 0.1f;
 	public float leafDragCenterOffset { get { return _leafDragCenterOffset; } }
 
-	private FlowerState state = FlowerState.None;
+	private FlowerState flowerState = FlowerState.None;
+	private bool flowerHappy = true;
+
 	private FlowerLeaf[] leafs;
 
 	private bool animEnabled = true;
-	private bool flowerFun = true;
 
 	void Awake()
 	{
@@ -46,9 +47,21 @@ public class FlowerController : MonoBehaviour
 		}
 	}
 
-	public bool CanInteract() { return state == FlowerState.None; }
+	public bool CanInteract() { return flowerState == FlowerState.None; }
 
-	public void SetState(FlowerState state) { this.state = state; }
+	public void SetState(FlowerState state)
+	{
+		animator.SetBool("IsHappy", flowerHappy);
+		if(state == FlowerState.None)
+		{
+			animator.SetBool(flowerState.ToString(), false);
+		}
+		else
+		{
+			animator.SetBool(state.ToString(), true);
+		}
+		flowerState = state;
+	}
 
 	public void SetAnimation(bool enabled)
 	{
@@ -79,7 +92,7 @@ public class FlowerController : MonoBehaviour
 	{
 		leafs[index].gameObject.SetActive(false);
 
-		flowerFun = !flowerFun;
+		flowerHappy = !flowerHappy;
 		SetAnimation(true);
 		SetState(FlowerState.None);
 	}
