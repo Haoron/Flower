@@ -4,17 +4,17 @@ public class FlowerFace : FlowerDraggable
 {
 	protected override void OnPick()
 	{
-		flower.SetState(FlowerState.FaceTouch);
+		flower.SetState(FlowerFaceState.FaceTouch);
 	}
 
 	protected override void OnRelease()
 	{
-		flower.SetState(FlowerState.None);
+		flower.SetState(FlowerFaceState.None);
 	}
 
 	protected override void OnStartDrag()
 	{
-		flower.SetState(FlowerState.FaceDrag);
+		flower.SetState(FlowerFaceState.FaceDrag);
 	}
 
 	protected override void OnDrag(Vector3 newPos)

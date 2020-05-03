@@ -305,36 +305,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 110242253}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &111214522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 111214523}
-  m_Layer: 0
-  m_Name: LeafsCenter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &111214523
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111214522}
-  m_LocalRotation: {x: -0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 7, z: 0.2028141}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2024147944}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
 --- !u!1001 &321082430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,7 +1056,7 @@ Transform:
   m_Children:
   - {fileID: 6818330675600643834}
   m_Father: {fileID: 2024147944}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
 --- !u!1 &2024147943
 GameObject:
@@ -1098,6 +1068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024147944}
   - component: {fileID: 2024147945}
+  - component: {fileID: 2024147947}
   - component: {fileID: 2024147946}
   m_Layer: 0
   m_Name: Flower
@@ -1118,7 +1089,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5259778454426405296}
-  - {fileID: 111214523}
   - {fileID: 1888171719}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1135,10 +1105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701c503b53bd80942b69680f13cd80a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2024147946}
+  flowerState: {fileID: 2024147947}
   flowerFace: {fileID: 7236905793261026670}
-  flowerAnchor: {fileID: 6818330675600643834}
-  areaCenter: {fileID: 111214523}
+  areaCenter: {fileID: 1888171719}
   areaRadius: 1
   _leafDragStart: 0.9
   _leafDragCenterOffset: 0.3
@@ -1161,6 +1130,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2024147947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024147943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19cf74bffd76aeb459c8a697a3730a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2024147946}
+  _anchor: {fileID: 6818330675600643834}
+  restoreSpeed: 4
 --- !u!1 &1576281603099601389
 GameObject:
   m_ObjectHideFlags: 0

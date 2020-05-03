@@ -3,11 +3,10 @@
 public class FlowerController : MonoBehaviour
 {
 	[SerializeField]
-	private Animator animator = null;
+	private FlowerState flowerState = null;
 	[SerializeField]
 	private FlowerFace flowerFace = null;
-	[SerializeField]
-	private Transform flowerAnchor = null;
+
 	[SerializeField]
 	private Transform areaCenter = null;
 	[SerializeField]
@@ -21,12 +20,7 @@ public class FlowerController : MonoBehaviour
 	private float _leafDragCenterOffset = 0.1f;
 	public float leafDragCenterOffset { get { return _leafDragCenterOffset; } }
 
-	private FlowerState flowerState = FlowerState.None;
-	private bool flowerHappy = true;
-
 	private FlowerLeaf[] leafs;
-
-	private bool animEnabled = true;
 
 	void Awake()
 	{
@@ -37,54 +31,39 @@ public class FlowerController : MonoBehaviour
 			leafs[i].leafIndex = i;
 		}
 		flowerFace.flower = this;
+		flowerState.Init(true);
 	}
 
-	void LateUpdate()
-	{
-		if(animEnabled)
-		{
-			flowerAnchor.localPosition = Vector3.Lerp(flowerAnchor.localPosition, Vector3.zero, Time.deltaTime * 4f);
-		}
-	}
+	public bool CanInteract() { return flowerState.state == FlowerFaceState.None && flowerState.inPlace && flowerState.isIdle; }
 
-	public bool CanInteract() { return flowerState == FlowerState.None; }
-
-	public void SetState(FlowerState state)
+	public void SetState(FlowerFaceState state)
 	{
-		animator.SetBool("IsHappy", flowerHappy);
-		if(state == FlowerState.None)
-		{
-			animator.SetBool(flowerState.ToString(), false);
-		}
-		else
-		{
-			animator.SetBool(state.ToString(), true);
-		}
-		flowerState = state;
+		flowerState.SetState(state);
 	}
 
 	public void SetAnimation(bool enabled)
 	{
-		animEnabled = enabled;
-		animator.enabled = enabled;
+		flowerState.SetAnimation(enabled);
 	}
 
 	public void MoveFace(Vector3 pos)
 	{
-		pos.z = flowerAnchor.position.z;
-		flowerAnchor.position = pos;
+		pos.z = flowerState.anchor.position.z;
+		flowerState.SetPosition(pos);
 	}
 
 	public bool MoveLeaf(Vector3 pos)
 	{
-		pos.z = flowerAnchor.position.z;
+		pos.z = flowerState.anchor.position.z;
 		float dist = Vector3.Distance(areaCenter.position, pos);
 		if(dist > areaRadius)
 		{
-			flowerAnchor.position = areaCenter.position + (pos - areaCenter.position) * (areaRadius / dist);
-			return false;
+			if(flowerState.SetPosition(areaCenter.position + (pos - areaCenter.position) * (areaRadius / dist)))
+			{
+				return false;
+			}
 		}
-		flowerAnchor.position = pos;
+		flowerState.SetPosition(pos);
 		return true;
 	}
 
@@ -92,8 +71,8 @@ public class FlowerController : MonoBehaviour
 	{
 		leafs[index].gameObject.SetActive(false);
 
-		flowerHappy = !flowerHappy;
+		flowerState.Toggle();
 		SetAnimation(true);
-		SetState(FlowerState.None);
+		SetState(FlowerFaceState.None);
 	}
 }

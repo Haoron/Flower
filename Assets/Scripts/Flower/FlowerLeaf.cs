@@ -60,18 +60,18 @@ public class FlowerLeaf : FlowerDraggable
 	protected override void OnPick()
 	{
 		nextPos = anchor.position + offset;
-		flower.SetState(FlowerState.LeafTouch);
+		flower.SetState(FlowerFaceState.LeafTouch);
 	}
 
 	protected override void OnRelease()
 	{
-		flower.SetState(FlowerState.None);
+		flower.SetState(FlowerFaceState.None);
 		lastPos = anchor.position;
 	}
 
 	protected override void OnStartDrag()
 	{
-		flower.SetState(FlowerState.LeafDrag);
+		flower.SetState(FlowerFaceState.LeafDrag);
 	}
 
 	protected override void OnDrag(Vector3 newPos)
