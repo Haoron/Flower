@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class FlowerLeaf : FlowerDraggable
+public class FlowerPetal : FlowerDraggable
 {
 	[SerializeField]
 	private Transform endBone = null;
@@ -9,9 +9,13 @@ public class FlowerLeaf : FlowerDraggable
 	private Transform target = null;
 
 	[NonSerialized, HideInInspector]
-	public int leafIndex;
+	public int index;
+	[NonSerialized, HideInInspector]
+	public int side;
+	//[NonSerialized, HideInInspector]
+	public Color color;
 
-	private float leafSize;
+	private float petalSize;
 	private Vector3 boneOffset;
 	private Vector3 targetOffset;
 
@@ -20,33 +24,39 @@ public class FlowerLeaf : FlowerDraggable
 
 	void Awake()
 	{
-		leafSize = 0f;
+		petalSize = 0f;
 		var b = endBone;
 		while(b != anchor && b.parent != null)
 		{
-			leafSize += Vector3.Distance(b.position, b.parent.position);
+			petalSize += Vector3.Distance(b.position, b.parent.position);
 			b = b.parent;
 		}
 		boneOffset = endBone.position - anchor.position;
 		targetOffset = target.localPosition;
 		lastPos = anchor.position;
+		
+		var renderers = GetComponentsInChildren<Renderer>();
+		for(int i = 0; i < renderers.Length; i++)
+		{
+			renderers[i].material.color = color;
+		}
 	}
 
 	void FixedUpdate()
 	{
 		if(state == State.Drag)
 		{
-			var offset = anchor.forward * flower.leafDragCenterOffset * leafSize;
+			var offset = anchor.forward * flower.petalDragCenterOffset * petalSize;
 			var dir = nextPos - (anchor.position + offset);
 
-			float dist = (new Vector2(dir.x, dir.y).magnitude / leafSize) - (flower.leafDragStart - flower.leafDragCenterOffset);
+			float dist = (new Vector2(dir.x, dir.y).magnitude / petalSize) - (flower.petalDragStart - flower.petalDragCenterOffset);
 			if(dist > 0f)
 			{
-				dist *= Mathf.Clamp01(dist / (1f - flower.leafDragStart));
-				if(!flower.MoveLeaf(anchor.position + dir.normalized * leafSize * dist))
+				dist *= Mathf.Clamp01(dist / (1f - flower.petalDragStart));
+				if(!flower.MovePetal(anchor.position + dir.normalized * petalSize * dist))
 				{
 					state = State.None;
-					flower.RemoveLeaf(leafIndex);
+					flower.RemovePetal(index);
 				}
 			}
 		}
@@ -57,10 +67,16 @@ public class FlowerLeaf : FlowerDraggable
 		}
 	}
 
+	public void MoveTo(Quaternion rotation)
+	{
+		anchor.localRotation = rotation;
+	}
+
 	protected override void OnPick()
 	{
 		nextPos = anchor.position + offset;
-		flower.SetState(FlowerFaceState.LeafTouch);
+		target.position = new Vector3(nextPos.x, nextPos.y, nextPos.z - 1f);
+		flower.SetState(FlowerFaceState.PetalTouch);
 	}
 
 	protected override void OnRelease()
@@ -71,7 +87,7 @@ public class FlowerLeaf : FlowerDraggable
 
 	protected override void OnStartDrag()
 	{
-		flower.SetState(FlowerFaceState.LeafDrag);
+		flower.SetState(FlowerFaceState.PetalDrag);
 	}
 
 	protected override void OnDrag(Vector3 newPos)

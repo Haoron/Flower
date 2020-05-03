@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2680804718209750118}
   - component: {fileID: 2680804718209750121}
   m_Layer: 8
-  m_Name: Leaf
+  m_Name: Petal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   anchor: {fileID: 2680804718209750118}
   endBone: {fileID: 2680804718102541679}
   target: {fileID: 2680804718024568772}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2680804718824866506
 GameObject:
   m_ObjectHideFlags: 0

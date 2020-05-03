@@ -1,8 +1,8 @@
 ﻿public enum FlowerFaceState
 {
 	None,
-	LeafTouch,
-	LeafDrag,
+	PetalTouch,
+	PetalDrag,
 	FaceTouch,
 	FaceDrag
 }
