@@ -52,8 +52,8 @@ public class FlowerLeaf : FlowerDraggable
 		}
 		else if(state == State.None)
 		{
-			target.localPosition = Vector3.MoveTowards(target.localPosition, targetOffset + Vector3.ClampMagnitude(anchor.InverseTransformVector(lastPos - anchor.position), 0.5f), Time.deltaTime * 0.5f);
-			lastPos = Vector3.MoveTowards(lastPos, anchor.position, Time.deltaTime * 8f);
+			target.localPosition = Vector3.Lerp(target.localPosition, targetOffset + Vector3.ClampMagnitude(anchor.InverseTransformVector(lastPos - anchor.position), 0.25f), Time.deltaTime);
+			lastPos = anchor.position + Vector3.Lerp(Vector3.ClampMagnitude(lastPos - anchor.position, 0.25f), Vector3.zero, Time.deltaTime * 8f);
 		}
 	}
 

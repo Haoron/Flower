@@ -3,6 +3,8 @@
 public class FlowerController : MonoBehaviour
 {
 	[SerializeField]
+	private Animator animator = null;
+	[SerializeField]
 	private FlowerFace flowerFace = null;
 	[SerializeField]
 	private Transform flowerAnchor = null;
@@ -23,6 +25,7 @@ public class FlowerController : MonoBehaviour
 	private FlowerLeaf[] leafs;
 
 	private bool animEnabled = true;
+	private bool flowerFun = true;
 
 	void Awake()
 	{
@@ -39,7 +42,7 @@ public class FlowerController : MonoBehaviour
 	{
 		if(animEnabled)
 		{
-			flowerAnchor.position = Vector3.MoveTowards(flowerAnchor.position, areaCenter.position, Time.deltaTime * 32f);
+			flowerAnchor.localPosition = Vector3.Lerp(flowerAnchor.localPosition, Vector3.zero, Time.deltaTime * 4f);
 		}
 	}
 
@@ -50,6 +53,7 @@ public class FlowerController : MonoBehaviour
 	public void SetAnimation(bool enabled)
 	{
 		animEnabled = enabled;
+		animator.enabled = enabled;
 	}
 
 	public void MoveFace(Vector3 pos)
@@ -74,7 +78,8 @@ public class FlowerController : MonoBehaviour
 	public void RemoveLeaf(int index)
 	{
 		leafs[index].gameObject.SetActive(false);
-		flowerAnchor.position = areaCenter.position;
+
+		flowerFun = !flowerFun;
 		SetAnimation(true);
 		SetState(FlowerState.None);
 	}

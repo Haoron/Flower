@@ -315,7 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111214523}
   m_Layer: 0
-  m_Name: Center
+  m_Name: LeafsCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2024147944}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
 --- !u!1001 &321082430
 PrefabInstance:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EventMask:
     serializedVersion: 2
     m_Bits: 288
-  m_MaxRayIntersections: 1
+  m_MaxRayIntersections: 0
 --- !u!4 &375791815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2680804718209750118, guid: d8ded3d93076f314fab27e2bcae63561,
@@ -1057,6 +1057,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1888171718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888171719}
+  m_Layer: 0
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1888171719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888171718}
+  m_LocalRotation: {x: -0.5735764, y: -0, z: -0, w: 0.8191521}
+  m_LocalPosition: {x: 0, y: 7, z: 0.2028141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6818330675600643834}
+  m_Father: {fileID: 2024147944}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
 --- !u!1 &2024147943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024147944}
   - component: {fileID: 2024147945}
+  - component: {fileID: 2024147946}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -1086,8 +1118,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5259778454426405296}
-  - {fileID: 6818330675600643834}
   - {fileID: 111214523}
+  - {fileID: 1888171719}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1103,12 +1135,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701c503b53bd80942b69680f13cd80a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2024147946}
   flowerFace: {fileID: 7236905793261026670}
   flowerAnchor: {fileID: 6818330675600643834}
   areaCenter: {fileID: 111214523}
   areaRadius: 1
   _leafDragStart: 0.9
   _leafDragCenterOffset: 0.3
+--- !u!95 &2024147946
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024147943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd23382d2f3006c4eaedb365f2dbcef9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1576281603099601389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,20 +1254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leaf
       objectReference: {fileID: 0}
-    - target: {fileID: 2680804719611301288, guid: d8ded3d93076f314fab27e2bcae63561,
+    - target: {fileID: 2680804719258511167, guid: d8ded3d93076f314fab27e2bcae63561,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2680804719657544557, guid: d8ded3d93076f314fab27e2bcae63561,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2680804719748730546, guid: d8ded3d93076f314fab27e2bcae63561,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
+      propertyPath: m_LocalPosition.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ded3d93076f314fab27e2bcae63561, type: 3}
@@ -1243,7 +1285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6818330675600643834}
   m_Layer: 0
-  m_Name: "Bl\xE4tter 03"
+  m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1309,8 +1351,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4074867862532265560}
-  m_LocalRotation: {x: -0.5735764, y: 0, z: 0, w: 0.8191521}
-  m_LocalPosition: {x: 0, y: 7, z: 0.2028141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3981672968817571254}
@@ -1320,9 +1362,9 @@ Transform:
   - {fileID: 1477037422}
   - {fileID: 419100364}
   - {fileID: 321082431}
-  m_Father: {fileID: 2024147944}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -70, y: 0, z: 0}
+  m_Father: {fileID: 1888171719}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7236905793261026668
 GameObject:
   m_ObjectHideFlags: 0
