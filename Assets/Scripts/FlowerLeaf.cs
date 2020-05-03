@@ -4,54 +4,69 @@ using UnityEngine;
 public class FlowerLeaf : FlowerDraggable
 {
 	[SerializeField]
-	private float leafSize = 2f;
+	private Transform endBone = null;
+	[SerializeField]
+	private Transform target = null;
 
 	[NonSerialized, HideInInspector]
 	public int leafIndex;
 
-	private Vector3 scale;
-	private Quaternion rotation;
-	private Vector3 targetScale;
-	private Quaternion targetRotation;
+	private float leafSize;
+	private Vector3 boneOffset;
+	private Vector3 targetOffset;
+
+	private Vector3 nextPos;
 	private Vector3 lastPos;
 
 	void Awake()
 	{
-		targetScale = scale = anchor.localScale;
-		targetRotation = rotation = anchor.localRotation;
+		leafSize = 0f;
+		var b = endBone;
+		while(b != anchor && b.parent != null)
+		{
+			leafSize += Vector3.Distance(b.position, b.parent.position);
+			b = b.parent;
+		}
+		boneOffset = endBone.position - anchor.position;
+		targetOffset = target.localPosition;
 		lastPos = anchor.position;
 	}
 
-	void LateUpdate()
+	void FixedUpdate()
 	{
-		if(state == State.None)
+		if(state == State.Drag)
 		{
-			anchor.localScale = Vector3.MoveTowards(anchor.localScale, targetScale, Time.deltaTime * leafSize * 0.5f);
-			anchor.localRotation = Quaternion.RotateTowards(anchor.localRotation, targetRotation, Time.deltaTime * 90f * 0.5f);
+			var offset = anchor.forward * flower.leafDragCenterOffset * leafSize;
+			var dir = nextPos - (anchor.position + offset);
 
-			if(Mathf.Approximately(lastPos.sqrMagnitude, anchor.position.sqrMagnitude))
+			float dist = (new Vector2(dir.x, dir.y).magnitude / leafSize) - (flower.leafDragStart - flower.leafDragCenterOffset);
+			if(dist > 0f)
 			{
-				targetScale = Vector3.MoveTowards(targetScale, scale, Time.deltaTime * leafSize * 0.5f);
-				targetRotation = Quaternion.RotateTowards(targetRotation, rotation, Time.deltaTime * 90f * 0.5f);
+				dist *= Mathf.Clamp01(dist / (1f - flower.leafDragStart));
+				if(!flower.MoveLeaf(anchor.position + dir.normalized * leafSize * dist))
+				{
+					state = State.None;
+					flower.RemoveLeaf(leafIndex);
+				}
 			}
-			else
-			{
-				var dir = lastPos - anchor.position;
-				targetScale = scale + Vector3.forward * (Vector3.Dot(dir, anchor.forward) / leafSize);
-				targetRotation = rotation * Quaternion.Euler(0f, Vector3.SignedAngle(anchor.forward, dir.normalized, Vector3.back) / 30f, 0f);
-				lastPos = anchor.position;
-			}
+		}
+		else if(state == State.None)
+		{
+			target.localPosition = Vector3.MoveTowards(target.localPosition, targetOffset + Vector3.ClampMagnitude(anchor.InverseTransformVector(lastPos - anchor.position), 0.5f), Time.deltaTime * 0.5f);
+			lastPos = Vector3.MoveTowards(lastPos, anchor.position, Time.deltaTime * 8f);
 		}
 	}
 
 	protected override void OnPick()
 	{
+		nextPos = anchor.position + offset;
 		flower.SetState(FlowerState.LeafTouch);
 	}
 
 	protected override void OnRelease()
 	{
 		flower.SetState(FlowerState.None);
+		lastPos = anchor.position;
 	}
 
 	protected override void OnStartDrag()
@@ -61,13 +76,7 @@ public class FlowerLeaf : FlowerDraggable
 
 	protected override void OnDrag(Vector3 newPos)
 	{
-		var dir = newPos - anchor.position;
-		anchor.localScale = scale + Vector3.forward * (Vector3.Dot(dir, offset) / leafSize) * (offset.magnitude / leafSize);
-		anchor.localRotation = rotation * Quaternion.Euler(0f, Vector3.SignedAngle(offset.normalized, ((newPos + offset) - anchor.position).normalized, Vector3.back) * (offset.magnitude / leafSize), 0f);
-		if(!flower.MoveLeaf(anchor.position + dir * (Mathf.Abs(Vector3.Dot(dir, offset) / leafSize))))
-		{
-			state = State.None;
-			flower.RemoveLeaf(leafIndex);
-		}
+		target.position = new Vector3(newPos.x, newPos.y, newPos.z - 1f);
+		nextPos = newPos;
 	}
 }

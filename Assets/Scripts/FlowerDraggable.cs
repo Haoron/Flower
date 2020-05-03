@@ -47,7 +47,7 @@ public abstract class FlowerDraggable : MonoBehaviour, IPointerDownHandler, IPoi
     {
         if(state == State.Drag)
         {
-            OnDrag(WorldPos(eventData) - offset);
+            OnDrag(WorldPos(eventData));
         }
     }
 

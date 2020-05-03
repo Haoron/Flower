@@ -11,6 +11,14 @@ public class FlowerController : MonoBehaviour
 	[SerializeField]
 	private float areaRadius = 2f;
 
+	[SerializeField]
+	private float _leafDragStart = 0.9f;
+	public float leafDragStart { get { return _leafDragStart; } }
+
+	[SerializeField]
+	private float _leafDragCenterOffset = 0.1f;
+	public float leafDragCenterOffset { get { return _leafDragCenterOffset; } }
+
 	private FlowerState state = FlowerState.None;
 	private FlowerLeaf[] leafs;
 
