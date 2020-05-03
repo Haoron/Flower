@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class FlowerController : MonoBehaviour
 {
@@ -21,20 +22,26 @@ public class FlowerController : MonoBehaviour
 	public float petalDragCenterOffset { get { return _petalDragCenterOffset; } }
 
 	[SerializeField]
-	private FlowerPetal[] petals = null;
+	private float petalsMoveTime = 1f;
 
-	private FlowerPetal merge = null;
+	private FlowerPetal[] petals;
+
 	private Quaternion[] petalSlots;
 	private int petalsCount;
 
+	private FlowerPetal merge = null;
+	private bool petalsMoveAnim = false;
+
 	void Awake()
 	{
+		petals = GetComponentsInChildren<FlowerPetal>();
 		petalSlots = new Quaternion[petals.Length];
 		for(int i = 0; i < petals.Length; i++)
 		{
 			petals[i].flower = this;
 			petals[i].index = i;
 			petalSlots[i] = petals[i].petalAnchor.localRotation;
+			petals[i].targetRotation = petalSlots[i];
 		}
 		flowerFace.flower = this;
 		flowerState.Init(true);
@@ -47,7 +54,7 @@ public class FlowerController : MonoBehaviour
 		petalsCount = petals.Length;
 	}
 
-	public bool CanInteract() { return merge == null && flowerState.state == FlowerFaceState.None && flowerState.inPlace && flowerState.isIdle; }
+	public bool CanInteract() { return merge == null && !petalsMoveAnim && flowerState.state == FlowerFaceState.None && flowerState.inPlace && flowerState.isIdle; }
 
 	public void SetState(FlowerFaceState state)
 	{
@@ -101,7 +108,7 @@ public class FlowerController : MonoBehaviour
 			int pos = (index + 1) % petals.Length;
 			if(side <= 0 && petals[pos] && petals[index] && petals[pos].color == petals[index].color)
 			{
-				petals[index == 0 ? 0 : pos].gameObject.SetActive(false);
+				merge = petals[index == 0 ? 0 : pos];
 				if(index == 0) ShiftPetals(0, 1);
 				else ShiftPetals(pos, -1);
 			}
@@ -110,11 +117,13 @@ public class FlowerController : MonoBehaviour
 				int neg = (index - 1 + petals.Length) % petals.Length;
 				if(side >= 0 && petals[neg] && petals[index] && petals[neg].color == petals[index].color)
 				{
-					petals[index == 0 ? 0 : neg].gameObject.SetActive(false);
+					merge = petals[index == 0 ? 0 : neg];
 					if(index == 0) ShiftPetals(0, -1);
 					else ShiftPetals(neg, 1);
 				}
 			}
+			petalsMoveAnim = true;
+			StartCoroutine(MovePetalsRoutine());
 		}
 	}
 
@@ -130,7 +139,26 @@ public class FlowerController : MonoBehaviour
 
 			petals[i].index = i;
 			petals[i].side = i == 0 ? 0 : side;
-			petals[i].MoveTo(petalSlots[i]);
+			petals[i].targetRotation = petalSlots[i];
 		}
+	}
+
+	private IEnumerator MovePetalsRoutine()
+	{
+		float time = 0f;
+		while(time < petalsMoveTime)
+		{
+			time += Time.deltaTime;
+			for(int i = 0; i < petals.Length; i++)
+			{
+				if(petals[i] == null) continue;
+				petals[i].petalAnchor.localRotation = Quaternion.Lerp(petals[i].petalAnchor.localRotation, petals[i].targetRotation, time / petalsMoveTime);
+			}
+			if(merge != null) merge.petalAnchor.localRotation = Quaternion.Lerp(merge.petalAnchor.localRotation, merge.targetRotation, time / petalsMoveTime);
+			yield return null;
+		}
+		petalsMoveAnim = false;
+		if(merge != null) merge.gameObject.SetActive(false);
+		merge = null;
 	}
 }

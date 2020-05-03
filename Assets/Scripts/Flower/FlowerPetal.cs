@@ -7,13 +7,14 @@ public class FlowerPetal : FlowerDraggable
 	private Transform endBone = null;
 	[SerializeField]
 	private Transform target = null;
+	public Color color;
 
 	[NonSerialized, HideInInspector]
 	public int index;
 	[NonSerialized, HideInInspector]
 	public int side;
-	//[NonSerialized, HideInInspector]
-	public Color color;
+	[NonSerialized, HideInInspector]
+	public Quaternion targetRotation;
 
 	private float petalSize;
 	private Vector3 boneOffset;
@@ -34,7 +35,7 @@ public class FlowerPetal : FlowerDraggable
 		boneOffset = endBone.position - anchor.position;
 		targetOffset = target.localPosition;
 		lastPos = anchor.position;
-		
+
 		var renderers = GetComponentsInChildren<Renderer>();
 		for(int i = 0; i < renderers.Length; i++)
 		{
@@ -65,11 +66,6 @@ public class FlowerPetal : FlowerDraggable
 			target.localPosition = Vector3.Lerp(target.localPosition, targetOffset + Vector3.ClampMagnitude(anchor.InverseTransformVector(lastPos - anchor.position), 0.25f), Time.deltaTime);
 			lastPos = anchor.position + Vector3.Lerp(Vector3.ClampMagnitude(lastPos - anchor.position, 0.25f), Vector3.zero, Time.deltaTime * 8f);
 		}
-	}
-
-	public void MoveTo(Quaternion rotation)
-	{
-		anchor.localRotation = rotation;
 	}
 
 	protected override void OnPick()
