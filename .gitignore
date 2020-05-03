@@ -30,3 +30,4 @@
 /Library/CrashedAssetImports.txt
 /Library/APIUpdater/
 *.dwlt
+/Library/EditorInstance.json
