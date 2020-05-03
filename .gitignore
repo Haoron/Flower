@@ -25,3 +25,6 @@
 /.vs/
 /Library/PackageCache/
 /.vscode/
+/Library/ArtifactDB
+/Library/Style.catalog
+/Library/CrashedAssetImports.txt
