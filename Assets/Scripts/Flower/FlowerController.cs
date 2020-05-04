@@ -54,7 +54,7 @@ public class FlowerController : MonoBehaviour
 		petalsCount = petals.Length;
 	}
 
-	public bool CanInteract() { return merge == null && !petalsMoveAnim && flowerState.state == FlowerFaceState.None && flowerState.inPlace && flowerState.isIdle; }
+	public bool CanInteract() { return merge == null && !petalsMoveAnim && flowerState.state == FlowerFaceState.None && flowerState.isIdle; }
 
 	public void SetState(FlowerFaceState state)
 	{
@@ -104,13 +104,13 @@ public class FlowerController : MonoBehaviour
 		}
 		else
 		{
-			ShiftPetals(index, side);
+			petalsMoveAnim |= ShiftPetals(index, side);
 			int pos = (index + 1) % petals.Length;
 			if(side <= 0 && petals[pos] && petals[index] && petals[pos].color == petals[index].color)
 			{
 				merge = petals[index == 0 ? 0 : pos];
-				if(index == 0) ShiftPetals(0, 1);
-				else ShiftPetals(pos, -1);
+				if(index == 0) petalsMoveAnim |= ShiftPetals(0, 1);
+				else petalsMoveAnim |= ShiftPetals(pos, -1);
 			}
 			else
 			{
@@ -118,17 +118,17 @@ public class FlowerController : MonoBehaviour
 				if(side >= 0 && petals[neg] && petals[index] && petals[neg].color == petals[index].color)
 				{
 					merge = petals[index == 0 ? 0 : neg];
-					if(index == 0) ShiftPetals(0, -1);
-					else ShiftPetals(neg, 1);
+					if(index == 0) petalsMoveAnim |= ShiftPetals(0, -1);
+					else petalsMoveAnim |= ShiftPetals(neg, 1);
 				}
 			}
-			petalsMoveAnim = true;
-			StartCoroutine(MovePetalsRoutine());
+			if(petalsMoveAnim) StartCoroutine(MovePetalsRoutine());
 		}
 	}
 
-	private void ShiftPetals(int toIndex, int side)
+	private bool ShiftPetals(int toIndex, int side)
 	{
+		bool isMoved = false;
 		if(side == 0) side = petals[1] ? 1 : -1;
 		for(int i = toIndex;; i = (i + side + petals.Length) % petals.Length)
 		{
@@ -140,7 +140,9 @@ public class FlowerController : MonoBehaviour
 			petals[i].index = i;
 			petals[i].side = i == 0 ? 0 : side;
 			petals[i].targetRotation = petalSlots[i];
+			isMoved = true;
 		}
+		return isMoved;
 	}
 
 	private IEnumerator MovePetalsRoutine()
