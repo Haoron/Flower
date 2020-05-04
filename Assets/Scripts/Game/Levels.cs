@@ -8,6 +8,7 @@ public class Levels : ScriptableObject
 	[System.Serializable]
 	public struct FlowerConfiguration
 	{
+		public bool isHappy;
 		public PetalInfo[] petals;
 	}
 

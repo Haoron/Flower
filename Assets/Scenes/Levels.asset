@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Levels
   m_EditorClassIdentifier: 
   levels:
-  - petals:
+  - isHappy: 1
+    petals:
     - color: {r: 1, g: 1, b: 1, a: 1}
       showIndex: 5
     - color: {r: 1, g: 0, b: 0, a: 1}
@@ -28,7 +29,8 @@ MonoBehaviour:
       showIndex: 2
     - color: {r: 0, g: 1, b: 1, a: 1}
       showIndex: 1
-  - petals:
+  - isHappy: 1
+    petals:
     - color: {r: 1, g: 1, b: 1, a: 1}
       showIndex: 0
     - color: {r: 1, g: 0, b: 0, a: 1}

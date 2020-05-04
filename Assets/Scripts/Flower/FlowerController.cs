@@ -27,7 +27,7 @@ public class FlowerController : MonoBehaviour
 	public void Init(Levels.FlowerConfiguration config)
 	{
 		flowerFace.flower = this;
-		flowerState.Init(true);
+		flowerState.Init(config.isHappy);
 		flowerPetals.SetPetals(this, config.petals);
 	}
 
