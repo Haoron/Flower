@@ -128,7 +128,7 @@ MonoBehaviour:
   anchor: {fileID: 2680804718209750118}
   endBone: {fileID: 2680804718102541679}
   target: {fileID: 2680804718024568772}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  ik: {fileID: 2680804718102541678}
 --- !u!1 &2680804718824866506
 GameObject:
   m_ObjectHideFlags: 0

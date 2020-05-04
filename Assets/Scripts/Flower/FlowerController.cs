@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlowerController : MonoBehaviour
 {
 	[SerializeField]
-	private FlowerState flowerState = null;
+	private FlowerStateController flowerState = null;
+	[SerializeField]
+	private PetalsController flowerPetals = null;
 	[SerializeField]
 	private FlowerFace flowerFace = null;
 
@@ -21,42 +22,18 @@ public class FlowerController : MonoBehaviour
 	private float _petalDragCenterOffset = 0.1f;
 	public float petalDragCenterOffset { get { return _petalDragCenterOffset; } }
 
-	[SerializeField]
-	private float petalsMoveTime = 1f;
+	public System.Action<bool> onEnd;
 
-	private FlowerPetal[] petals;
-
-	private Quaternion[] petalSlots;
-	private int petalsCount;
-
-	private FlowerPetal merge = null;
-	private bool petalsMoveAnim = false;
-
-	void Awake()
+	public void Init(Levels.FlowerConfiguration config)
 	{
-		petals = GetComponentsInChildren<FlowerPetal>();
-		petalSlots = new Quaternion[petals.Length];
-		for(int i = 0; i < petals.Length; i++)
-		{
-			petals[i].flower = this;
-			petals[i].index = i;
-			petalSlots[i] = petals[i].petalAnchor.localRotation;
-			petals[i].targetRotation = petalSlots[i];
-		}
 		flowerFace.flower = this;
 		flowerState.Init(true);
-
-		int count = petals.Length / 2;
-		for(int i = -count; i < (petals.Length - count); i++)
-		{
-			petals[(i + petals.Length) % petals.Length].side = Mathf.Clamp(i, -1, 1);
-		}
-		petalsCount = petals.Length;
+		flowerPetals.SetPetals(this, config.petals);
 	}
 
-	public bool CanInteract() { return merge == null && !petalsMoveAnim && flowerState.state == FlowerFaceState.None && flowerState.isIdle; }
+	public bool CanInteract() { return !flowerPetals.isAnimate && flowerState.state == FlowerState.None && flowerState.isIdle; }
 
-	public void SetState(FlowerFaceState state)
+	public void SetState(FlowerState state)
 	{
 		flowerState.SetState(state);
 	}
@@ -89,78 +66,14 @@ public class FlowerController : MonoBehaviour
 
 	public void RemovePetal(int index)
 	{
-		int side = petals[index].side;
-		petals[index].gameObject.SetActive(false);
-
 		flowerState.Toggle();
 		SetAnimation(true);
-		SetState(FlowerFaceState.None);
+		SetState(FlowerState.None);
 
-		petals[index] = null;
-		petalsCount--;
-		if(petalsCount <= 0)
+		flowerPetals.RemovePetal(index);
+		if(flowerPetals.count <= 0)
 		{
-			//TODO: game end
+			if(onEnd != null) onEnd.Invoke(flowerState.isHappy);
 		}
-		else
-		{
-			petalsMoveAnim |= ShiftPetals(index, side);
-			int pos = (index + 1) % petals.Length;
-			if(side <= 0 && petals[pos] && petals[index] && petals[pos].color == petals[index].color)
-			{
-				merge = petals[index == 0 ? 0 : pos];
-				if(index == 0) petalsMoveAnim |= ShiftPetals(0, 1);
-				else petalsMoveAnim |= ShiftPetals(pos, -1);
-			}
-			else
-			{
-				int neg = (index - 1 + petals.Length) % petals.Length;
-				if(side >= 0 && petals[neg] && petals[index] && petals[neg].color == petals[index].color)
-				{
-					merge = petals[index == 0 ? 0 : neg];
-					if(index == 0) petalsMoveAnim |= ShiftPetals(0, -1);
-					else petalsMoveAnim |= ShiftPetals(neg, 1);
-				}
-			}
-			if(petalsMoveAnim) StartCoroutine(MovePetalsRoutine());
-		}
-	}
-
-	private bool ShiftPetals(int toIndex, int side)
-	{
-		bool isMoved = false;
-		if(side == 0) side = petals[1] ? 1 : -1;
-		for(int i = toIndex;; i = (i + side + petals.Length) % petals.Length)
-		{
-			int k = (i + side + petals.Length) % petals.Length;
-			if(petals[k] == null || petals[k].side != side) break;
-			petals[i] = petals[k];
-			petals[k] = null;
-
-			petals[i].index = i;
-			petals[i].side = i == 0 ? 0 : side;
-			petals[i].targetRotation = petalSlots[i];
-			isMoved = true;
-		}
-		return isMoved;
-	}
-
-	private IEnumerator MovePetalsRoutine()
-	{
-		float time = 0f;
-		while(time < petalsMoveTime)
-		{
-			time += Time.deltaTime;
-			for(int i = 0; i < petals.Length; i++)
-			{
-				if(petals[i] == null) continue;
-				petals[i].petalAnchor.localRotation = Quaternion.Lerp(petals[i].petalAnchor.localRotation, petals[i].targetRotation, time / petalsMoveTime);
-			}
-			if(merge != null) merge.petalAnchor.localRotation = Quaternion.Lerp(merge.petalAnchor.localRotation, merge.targetRotation, time / petalsMoveTime);
-			yield return null;
-		}
-		petalsMoveAnim = false;
-		if(merge != null) merge.gameObject.SetActive(false);
-		merge = null;
 	}
 }

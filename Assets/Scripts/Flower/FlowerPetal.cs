@@ -1,4 +1,5 @@
 ﻿using System;
+using DitzelGames.FastIK;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -10,6 +11,10 @@ public class FlowerPetal : FlowerDraggable
 	private Transform endBone = null;
 	[SerializeField]
 	private Transform target = null;
+	[SerializeField]
+	private FastIKFabric ik = null;
+
+	[NonSerialized, HideInInspector]
 	public Color color;
 
 	[NonSerialized, HideInInspector]
@@ -27,26 +32,7 @@ public class FlowerPetal : FlowerDraggable
 	private Vector3 lastPos;
 	private Renderer[] renderers = null;
 	private MaterialPropertyBlock block = null;
-
-	void Awake()
-	{
-#if UNITY_EDITOR
-		if(!Application.isPlaying) return;
-#endif
-		petalSize = 0f;
-		var b = endBone;
-		while(b != anchor && b.parent != null)
-		{
-			petalSize += Vector3.Distance(b.position, b.parent.position);
-			b = b.parent;
-		}
-		boneOffset = endBone.position - anchor.position;
-		targetOffset = target.localPosition;
-		lastPos = anchor.position;
-
-		renderers = GetComponentsInChildren<Renderer>();
-		block = new MaterialPropertyBlock();
-	}
+	private bool isInited = false;
 
 #if UNITY_EDITOR
 	void OnValidate()
@@ -94,22 +80,55 @@ public class FlowerPetal : FlowerDraggable
 		}
 	}
 
+	public void Init(Quaternion rotation, Color color, int side)
+	{
+		this.color = color;
+		this.side = side;
+		anchor.localScale = Vector3.one;
+		anchor.localRotation = rotation;
+		targetRotation = rotation;
+
+		boneOffset = endBone.position - anchor.position;
+		lastPos = anchor.position;
+
+		if(!isInited) InitInternal();
+	}
+
+	private void InitInternal()
+	{
+		isInited = true;
+
+		petalSize = 0f;
+		var b = endBone;
+		while(b != anchor && b.parent != null)
+		{
+			petalSize += Vector3.Distance(b.position, b.parent.position);
+			b = b.parent;
+		}
+
+		targetOffset = target.localPosition;
+		ik.Init();
+
+		renderers = GetComponentsInChildren<Renderer>();
+		block = new MaterialPropertyBlock();
+	}
+
 	protected override void OnPick()
 	{
 		nextPos = anchor.position + offset;
 		target.position = new Vector3(nextPos.x, nextPos.y, nextPos.z - 1f);
-		flower.SetState(FlowerFaceState.PetalTouch);
+		flower.SetState(FlowerState.PetalTouch);
 	}
 
 	protected override void OnRelease()
 	{
-		flower.SetState(FlowerFaceState.None);
+		flower.SetState(FlowerState.None);
 		lastPos = anchor.position;
 	}
 
 	protected override void OnStartDrag()
 	{
-		flower.SetState(FlowerFaceState.PetalDrag);
+		flower.SetState(FlowerState.PetalDrag);
 	}
 
 	protected override void OnDrag(Vector3 newPos)
