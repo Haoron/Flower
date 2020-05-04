@@ -31,3 +31,4 @@
 /Library/APIUpdater/
 *.dwlt
 /Library/EditorInstance.json
+*.exe*.log
