@@ -32,3 +32,4 @@
 *.dwlt
 /Library/EditorInstance.json
 *.exe*.log
+/Library/InspectorExpandedItems.asset
