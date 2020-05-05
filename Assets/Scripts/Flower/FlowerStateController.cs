@@ -17,6 +17,14 @@ public class FlowerStateController : MonoBehaviour
 
 	private bool animEnabled = true;
 
+	public void Init(bool isHappy)
+	{
+		state = FlowerState.None;
+		animEnabled = true;
+		this.isHappy = isHappy;
+		_anchor.localPosition = Vector3.zero;
+	}
+
 	void LateUpdate()
 	{
 		if(animEnabled)
@@ -24,14 +32,6 @@ public class FlowerStateController : MonoBehaviour
 			float delta = Time.deltaTime * restoreSpeed;
 			_anchor.localPosition = Vector3.Lerp(_anchor.localPosition, Vector3.zero, delta);
 		}
-	}
-
-	public void Init(bool isHappy)
-	{
-		state = FlowerState.None;
-		animEnabled = true;
-		this.isHappy = isHappy;
-		_anchor.localPosition = Vector3.zero;
 	}
 
 	public void Toggle() { isHappy = !isHappy; }

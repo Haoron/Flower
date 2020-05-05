@@ -14,6 +14,7 @@ public abstract class FlowerDraggable : MonoBehaviour, IPointerDownHandler, IPoi
 
 	protected State state;
 	protected Vector3 offset;
+	protected PointerEventData eventData;
 
 	void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
 	{
@@ -23,6 +24,7 @@ public abstract class FlowerDraggable : MonoBehaviour, IPointerDownHandler, IPoi
 			offset = WorldPos(eventData) - anchor.position;
 			flower.SetAnimation(false);
 			OnPick();
+			eventData.Use();
 		}
 	}
 
@@ -33,6 +35,7 @@ public abstract class FlowerDraggable : MonoBehaviour, IPointerDownHandler, IPoi
 			state = State.None;
 			flower.SetAnimation(true);
 			OnRelease();
+			eventData.Use();
 		}
 	}
 
@@ -42,6 +45,7 @@ public abstract class FlowerDraggable : MonoBehaviour, IPointerDownHandler, IPoi
 		{
 			state = State.Drag;
 			OnStartDrag();
+			this.eventData = eventData;
 		}
 	}
 
@@ -60,6 +64,7 @@ public abstract class FlowerDraggable : MonoBehaviour, IPointerDownHandler, IPoi
 			state = State.None;
 			flower.SetAnimation(true);
 			OnRelease();
+			this.eventData = null;
 		}
 	}
 

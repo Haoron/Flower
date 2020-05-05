@@ -13,9 +13,10 @@ public class FlowerPetal : FlowerDraggable
 	private Transform target = null;
 	[SerializeField]
 	private FastIKFabric ik = null;
-
-	[NonSerialized, HideInInspector]
-	public Color color;
+	[SerializeField]
+	private Transform[] bones = null;
+	[SerializeField]
+	private PetalDrop petalDropPrefab = null;
 
 	[NonSerialized, HideInInspector]
 	public int index;
@@ -23,6 +24,8 @@ public class FlowerPetal : FlowerDraggable
 	public int side;
 	[NonSerialized, HideInInspector]
 	public Quaternion targetRotation;
+
+	public Color color { get; private set; }
 
 	private float petalSize;
 	private Vector3 boneOffset;
@@ -34,12 +37,28 @@ public class FlowerPetal : FlowerDraggable
 	private MaterialPropertyBlock block = null;
 	private bool isInited = false;
 
+	public void Init(Quaternion rotation, Color color, int side)
+	{
+		this.color = color;
+		this.side = side;
+		anchor.localScale = Vector3.one;
+		anchor.localRotation = rotation;
+		targetRotation = rotation;
+
+		boneOffset = endBone.position - anchor.position;
+		lastPos = anchor.position;
+
+		if(!isInited) InitInternal();
+		target.localPosition = targetOffset;
+	}
+
 #if UNITY_EDITOR
 	void OnValidate()
 	{
 		if(renderers == null) renderers = GetComponentsInChildren<Renderer>();
 		if(block == null) block = new MaterialPropertyBlock();
 	}
+#endif
 
 	void Update()
 	{
@@ -50,7 +69,6 @@ public class FlowerPetal : FlowerDraggable
 			renderers[i].SetPropertyBlock(block);
 		}
 	}
-#endif
 
 	void FixedUpdate()
 	{
@@ -69,6 +87,11 @@ public class FlowerPetal : FlowerDraggable
 				if(!flower.MovePetal(anchor.position + dir.normalized * petalSize * dist))
 				{
 					state = State.None;
+
+					var drop = PetalDrop.GetInstance(petalDropPrefab);
+					this.eventData.pointerDrag = drop.gameObject;
+					drop.Init(color, bones);
+
 					flower.RemovePetal(index);
 				}
 			}
@@ -78,20 +101,6 @@ public class FlowerPetal : FlowerDraggable
 			target.localPosition = Vector3.Lerp(target.localPosition, targetOffset + Vector3.ClampMagnitude(anchor.InverseTransformVector(lastPos - anchor.position), 0.25f), Time.deltaTime);
 			lastPos = anchor.position + Vector3.Lerp(Vector3.ClampMagnitude(lastPos - anchor.position, 0.25f), Vector3.zero, Time.deltaTime * 8f);
 		}
-	}
-
-	public void Init(Quaternion rotation, Color color, int side)
-	{
-		this.color = color;
-		this.side = side;
-		anchor.localScale = Vector3.one;
-		anchor.localRotation = rotation;
-		targetRotation = rotation;
-
-		boneOffset = endBone.position - anchor.position;
-		lastPos = anchor.position;
-
-		if(!isInited) InitInternal();
 	}
 
 	private void InitInternal()
