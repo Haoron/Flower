@@ -14,6 +14,8 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 	[SerializeField]
 	private Transform[] bones = null;
 	[SerializeField]
+	private HingeJoint[] joints = null;
+	[SerializeField]
 	private float lifeTime = 5f;
 
 	private bool isDropped;
@@ -24,6 +26,10 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
 	public void Init(Color color, Transform[] bones)
 	{
+		for(int i = 0; i < joints.Length; i++)
+		{
+			joints[i].autoConfigureConnectedAnchor = false;
+		}
 		this.color = color;
 		for(int i = 0; i < bones.Length; i++)
 		{
@@ -32,6 +38,11 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 			this.bones[i].localScale = bones[i].lossyScale;
 		}
 		target.position = bones[bones.Length - 1].position;
+
+		for(int i = 0; i < joints.Length; i++)
+		{
+			joints[i].connectedAnchor = joints[i].connectedAnchor;
+		}
 		targetRB.isKinematic = true;
 		isDropped = false;
 	}
