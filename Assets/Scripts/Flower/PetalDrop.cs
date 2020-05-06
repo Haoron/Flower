@@ -26,6 +26,7 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 
 	public void Init(Color color, Transform[] bones)
 	{
+		gameObject.SetActive(false);
 		for(int i = 0; i < joints.Length; i++)
 		{
 			joints[i].autoConfigureConnectedAnchor = false;
@@ -45,6 +46,7 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 		}
 		targetRB.isKinematic = true;
 		isDropped = false;
+		gameObject.SetActive(true);
 	}
 
 	void Awake()
