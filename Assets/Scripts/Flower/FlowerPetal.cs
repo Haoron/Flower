@@ -17,6 +17,8 @@ public class FlowerPetal : FlowerDraggable
 	private Transform[] bones = null;
 	[SerializeField]
 	private PetalDrop petalDropPrefab = null;
+	[SerializeField]
+	private Vector3 pickOffset = Vector3.back;
 
 	[NonSerialized, HideInInspector]
 	public int index;
@@ -90,6 +92,7 @@ public class FlowerPetal : FlowerDraggable
 
 					var drop = PetalDrop.GetInstance(petalDropPrefab);
 					this.eventData.pointerDrag = drop.gameObject;
+					this.eventData = null;
 					drop.Init(color, bones);
 
 					flower.RemovePetal(index);
@@ -125,7 +128,7 @@ public class FlowerPetal : FlowerDraggable
 	protected override void OnPick()
 	{
 		nextPos = anchor.position + offset;
-		target.position = new Vector3(nextPos.x, nextPos.y, nextPos.z - 1f);
+		target.position = nextPos + pickOffset;
 		flower.SetState(FlowerState.PetalTouch);
 	}
 
@@ -142,7 +145,7 @@ public class FlowerPetal : FlowerDraggable
 
 	protected override void OnDrag(Vector3 newPos)
 	{
-		target.position = new Vector3(newPos.x, newPos.y, newPos.z - 1f);
+		target.position = nextPos + pickOffset;
 		nextPos = newPos;
 	}
 }

@@ -38,6 +38,8 @@ namespace DitzelGames.FastIK
 		[Range(0, 1)]
 		public float SnapBackStrength = 1f;
 
+		public bool manualInit = false;
+
 		protected float[] BonesLength; //Target to Origin
 		protected float CompleteLength;
 		protected Transform[] Bones;
@@ -46,6 +48,11 @@ namespace DitzelGames.FastIK
 		protected Quaternion[] StartRotationBone;
 		protected Quaternion StartRotationTarget;
 		protected Transform Root;
+
+		void Awake()
+		{
+			if(!manualInit) Init();
+		}
 
 		public void Init()
 		{
@@ -107,7 +114,7 @@ namespace DitzelGames.FastIK
 
 		private void ResolveIK()
 		{
-			if(Target == null)
+			if(Target == null || manualInit && BonesLength == null)
 				return;
 
 			if(BonesLength.Length != ChainLength)
@@ -192,7 +199,7 @@ namespace DitzelGames.FastIK
 			if(Root == null)
 				return current.position;
 			else
-				return Root.InverseTransformPoint(current.position - Root.position);
+				return Root.InverseTransformPoint(current.position);
 		}
 
 		private void SetPositionRootSpace(Transform current, Vector3 position)
@@ -200,7 +207,7 @@ namespace DitzelGames.FastIK
 			if(Root == null)
 				current.position = position;
 			else
-				current.position = Root.TransformPoint(position) + Root.position;
+				current.position = Root.TransformPoint(position);
 		}
 
 		private Quaternion GetRotationRootSpace(Transform current)

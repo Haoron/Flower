@@ -35,6 +35,8 @@ public class FlowerController : MonoBehaviour
 
 	public void SetState(FlowerState state)
 	{
+		//TODO: sound
+
 		flowerState.SetState(state);
 	}
 
@@ -69,6 +71,8 @@ public class FlowerController : MonoBehaviour
 		flowerState.Toggle();
 		SetAnimation(true);
 		SetState(FlowerState.None);
+
+		//TODO: sound
 
 		flowerPetals.RemovePetal(index);
 		if(flowerPetals.count <= 0)

@@ -49,7 +49,7 @@ public class PetalsController : MonoBehaviour
 			slots[i] = Quaternion.Euler(0f, angle * i, 0f);
 			activePetals[i].Init(slots[i], petals[i].color, i == 0 ? 0 : (i > half ? -1 : 1));
 
-			activePetals[i].petalAnchor.localScale = Vector3.zero;
+			activePetals[i].petalAnchor.localScale = Vector3.one * 0.01f;
 			activePetals[i].gameObject.SetActive(true);
 		}
 		isAnimate = true;
@@ -120,7 +120,7 @@ public class PetalsController : MonoBehaviour
 			while(time < petalsShowTime)
 			{
 				time += Time.deltaTime;
-				activePetals[index].petalAnchor.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, time / petalsShowTime);
+				activePetals[index].petalAnchor.localScale = Vector3.Lerp(Vector3.one * 0.01f, Vector3.one, time / petalsShowTime);
 				yield return null;
 			}
 		}
