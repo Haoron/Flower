@@ -46,6 +46,12 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 		}
 		targetRB.isKinematic = true;
 		isDropped = false;
+		for(int i = 0; i < renderers.Length; i++)
+		{
+			renderers[i].GetPropertyBlock(block);
+			block.SetColor("_Color", color);
+			renderers[i].SetPropertyBlock(block);
+		}
 		gameObject.SetActive(true);
 	}
 
