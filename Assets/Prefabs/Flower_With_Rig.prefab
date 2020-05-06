@@ -74,7 +74,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2800465646592199444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.817, y: 1.698, z: 1.094}
+  m_LocalPosition: {x: -0.011, y: 1.698, z: 1.523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 265027573447774572}
@@ -151,6 +151,8 @@ MonoBehaviour:
   animator: {fileID: 1189071033}
   _anchor: {fileID: 5865512797174712785}
   restoreSpeed: 4
+  flowerRoot: {fileID: 7623846891315568744}
+  flowerMaxDistance: 3.74
 --- !u!114 &4165057622370443811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +677,12 @@ PrefabInstance:
 --- !u!4 &3496301131932364624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 09d47a1004d098f41b7ebb2f6232ce71,
+    type: 3}
+  m_PrefabInstance: {fileID: 8502778042396329034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7623846891315568744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7191483556750498782, guid: 09d47a1004d098f41b7ebb2f6232ce71,
     type: 3}
   m_PrefabInstance: {fileID: 8502778042396329034}
   m_PrefabAsset: {fileID: 0}

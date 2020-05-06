@@ -9,6 +9,11 @@ public class FlowerStateController : MonoBehaviour
 	[SerializeField]
 	private float restoreSpeed = 4f;
 
+	[SerializeField]
+	private Transform flowerRoot = null;
+	[SerializeField]
+	private float flowerMaxDistance = 1f;
+
 	public Transform anchor { get { return _anchor; } }
 	public FlowerState state { get; private set; }
 	public bool isHappy { get; private set; }
@@ -59,6 +64,8 @@ public class FlowerStateController : MonoBehaviour
 	public bool SetPosition(Vector3 pos)
 	{
 		if(animEnabled) return false;
+		float dist = Vector3.Distance(flowerRoot.position, pos);
+		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
 		_anchor.position = pos;
 		return true;
 	}
