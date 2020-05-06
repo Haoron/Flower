@@ -127,6 +127,7 @@ public class FlowerPetal : FlowerDraggable
 
 	protected override void OnPick()
 	{
+		flower.PlaySound(FlowerSound.PetalTouch);
 		nextPos = anchor.position + offset;
 		target.position = nextPos + pickOffset;
 		flower.SetState(FlowerState.PetalTouch);
@@ -134,12 +135,14 @@ public class FlowerPetal : FlowerDraggable
 
 	protected override void OnRelease()
 	{
+		flower.PlaySound(FlowerSound.PetalDrop);
 		flower.SetState(FlowerState.None);
 		lastPos = anchor.position;
 	}
 
 	protected override void OnStartDrag()
 	{
+		flower.PlaySound(FlowerSound.PetalDrag);
 		flower.SetState(FlowerState.PetalDrag);
 	}
 

@@ -9,6 +9,9 @@ public class PetalsController : MonoBehaviour
 	[SerializeField]
 	private float petalsShowTime = 0.5f;
 
+	[SerializeField]
+	private FlowerSounds sounds = null;
+
 	public bool isAnimate { get; private set; }
 	public int count { get; private set; }
 
@@ -115,6 +118,8 @@ public class PetalsController : MonoBehaviour
 		float time;
 		for(int i = 0; i < list.Count; i++)
 		{
+			sounds.Play(FlowerSound.PetalCreate, 0.1f);
+
 			int index = list[i].Key;
 			time = 0f;
 			while(time < petalsShowTime)

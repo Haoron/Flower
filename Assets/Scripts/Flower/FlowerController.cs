@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class FlowerController : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class FlowerController : MonoBehaviour
 	[SerializeField]
 	private float flowerMaxDistance = 1f;
 
+	[SerializeField]
+	private FlowerSounds sounds = null;
+
 	public System.Action<bool> onEnd;
 
 	public void Init(Levels.FlowerConfiguration config)
@@ -40,9 +44,12 @@ public class FlowerController : MonoBehaviour
 
 	public void SetState(FlowerState state)
 	{
-		//TODO: sound
-
 		flowerState.SetState(state);
+	}
+
+	public void PlaySound(FlowerSound sound)
+	{
+		sounds.Play(sound, 0.1f);
 	}
 
 	public void SetAnimation(bool enabled)
@@ -66,13 +73,13 @@ public class FlowerController : MonoBehaviour
 	public bool MovePetal(Vector3 pos)
 	{
 		float dist = Vector3.Distance(flowerRoot.position, pos);
+		float aDist = Vector3.Distance(areaCenter.position, pos);
 		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
 		pos.z = flowerState.anchor.position.z;
 
-		dist = Vector3.Distance(areaCenter.position, pos);
-		if(dist > areaRadius)
+		if(aDist > areaRadius)
 		{
-			if(flowerState.SetPosition(areaCenter.position + (pos - areaCenter.position) * (areaRadius / dist)))
+			if(flowerState.SetPosition(areaCenter.position + (pos - areaCenter.position) * (areaRadius / aDist)))
 			{
 				return false;
 			}
@@ -87,12 +94,18 @@ public class FlowerController : MonoBehaviour
 		SetAnimation(true);
 		SetState(FlowerState.None);
 
-		//TODO: sound
+		float time = sounds.Play(FlowerSound.PetalRemove, 0.1f);
 
 		flowerPetals.RemovePetal(index);
 		if(flowerPetals.count <= 0)
 		{
-			if(onEnd != null) onEnd.Invoke(flowerState.isHappy);
+			StartCoroutine(EndGameRoutine(time));
 		}
+	}
+
+	private IEnumerator EndGameRoutine(float time)
+	{
+		yield return new WaitForSeconds(time);
+		if(onEnd != null) onEnd.Invoke(flowerState.isHappy);
 	}
 }
