@@ -2087,7 +2087,7 @@ PrefabInstance:
     - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.28
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
@@ -2134,10 +2134,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222734518031155426, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3888516280400946047, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
       propertyPath: m_Name
       value: Flower_With_Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793894802676798100, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: flowerMaxDistance
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090ba6219898f8a4fb43fe3d98e2b0bf, type: 3}

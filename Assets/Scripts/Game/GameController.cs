@@ -24,8 +24,14 @@ public class GameController : MonoBehaviour
 
 	private void OnEndGame(bool isHappy)
 	{
-		//TODO: show result
 		if(isHappy) levelIndex++;
+		flower.PlayAnimation(isHappy? "Win": "Lose", 0.05f, OnEndAnim);
+		//TODO: sound
+		//TODO: show result
+	}
+
+	private void OnEndAnim()
+	{
 		if(levelIndex < levels.levels.Length)
 		{
 			flower.Init(levels.levels[levelIndex]);

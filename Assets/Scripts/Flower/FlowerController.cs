@@ -22,6 +22,11 @@ public class FlowerController : MonoBehaviour
 	private float _petalDragCenterOffset = 0.1f;
 	public float petalDragCenterOffset { get { return _petalDragCenterOffset; } }
 
+	[SerializeField]
+	private Transform flowerRoot = null;
+	[SerializeField]
+	private float flowerMaxDistance = 1f;
+
 	public System.Action<bool> onEnd;
 
 	public void Init(Levels.FlowerConfiguration config)
@@ -45,16 +50,26 @@ public class FlowerController : MonoBehaviour
 		flowerState.SetAnimation(enabled);
 	}
 
+	public void PlayAnimation(string name, float lerpTime, System.Action callback)
+	{
+		flowerState.PlayAnimation(name, lerpTime, callback);
+	}
+
 	public void MoveFace(Vector3 pos)
 	{
+		float dist = Vector3.Distance(flowerRoot.position, pos);
+		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
 		pos.z = flowerState.anchor.position.z;
 		flowerState.SetPosition(pos);
 	}
 
 	public bool MovePetal(Vector3 pos)
 	{
+		float dist = Vector3.Distance(flowerRoot.position, pos);
+		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
 		pos.z = flowerState.anchor.position.z;
-		float dist = Vector3.Distance(areaCenter.position, pos);
+
+		dist = Vector3.Distance(areaCenter.position, pos);
 		if(dist > areaRadius)
 		{
 			if(flowerState.SetPosition(areaCenter.position + (pos - areaCenter.position) * (areaRadius / dist)))
