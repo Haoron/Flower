@@ -14,7 +14,7 @@ public class FlowerStateController : MonoBehaviour
 	public FlowerState state { get; private set; }
 	public bool isHappy { get; private set; }
 
-	public bool isIdle { get { return animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"); } }
+	public bool isIdle { get { return animator.GetCurrentAnimatorStateInfo(0).IsTag("Idle"); } }
 
 	private bool animEnabled = true;
 
