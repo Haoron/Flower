@@ -169,7 +169,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petalsMoveTime: 1
-  petalsShowTime: 0.5
+  petalsShowAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -2.0330825
+      outSlope: -2.0330825
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.072244346
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   sounds: {fileID: 4268261547596990365}
 --- !u!95 &1189071033
 Animator:

@@ -16,7 +16,9 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 	[SerializeField]
 	private HingeJoint[] joints = null;
 	[SerializeField]
-	private float lifeTime = 5f;
+	private AnimationCurve scaleOverLifeTime = null;
+	[SerializeField]
+	private AnimationCurve opacityOverLifeTime = null;
 
 	private bool isDropped;
 	private Color color;
@@ -88,10 +90,21 @@ public class PetalDrop : MonoBehaviour, IDragHandler, IEndDragHandler
 	private IEnumerator DropRoutine()
 	{
 		float time = 0f;
+		float lifeTime = scaleOverLifeTime.keys[scaleOverLifeTime.length - 1].time;
+		Vector3 fromScale = this.bones[0].localScale;
 		while(time < lifeTime)
 		{
 			time += Time.deltaTime;
-			color.a = Mathf.Clamp01(1f - time / lifeTime);
+			Vector3 scale = fromScale * scaleOverLifeTime.Evaluate(Mathf.Min(time, lifeTime));
+			for(int i = 0; i < bones.Length; i++)
+			{
+				this.bones[i].localScale = scale;
+			}
+			for(int i = 0; i < joints.Length; i++)
+			{
+				joints[i].connectedAnchor = joints[i].connectedAnchor;
+			}
+			color.a = opacityOverLifeTime.Evaluate(Mathf.Min(time, lifeTime));
 			yield return null;
 		}
 		gameObject.SetActive(false);

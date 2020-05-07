@@ -23,6 +23,7 @@ public class FlowerStateController : MonoBehaviour
 		state = FlowerState.None;
 		animEnabled = true;
 		this.isHappy = isHappy;
+		animator.SetBool("IsHappy", isHappy);
 		_anchor.localPosition = Vector3.zero;
 	}
 
@@ -35,11 +36,15 @@ public class FlowerStateController : MonoBehaviour
 		}
 	}
 
-	public void Toggle() { isHappy = !isHappy; }
+	public void Toggle()
+	{
+		isHappy = !isHappy;
+		animator.SetBool("IsHappy", isHappy);
+		animator.SetTrigger("ToggleMood");
+	}
 
 	public void SetState(FlowerState state)
 	{
-		animator.SetBool("IsHappy", isHappy);
 		if(state == FlowerState.None)
 		{
 			animator.SetBool(this.state.ToString(), false);

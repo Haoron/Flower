@@ -7,7 +7,7 @@ public class PetalsController : MonoBehaviour
 	[SerializeField]
 	private float petalsMoveTime = 1f;
 	[SerializeField]
-	private float petalsShowTime = 0.5f;
+	private AnimationCurve petalsShowAnimation = null;
 
 	[SerializeField]
 	private FlowerSounds sounds = null;
@@ -115,6 +115,7 @@ public class PetalsController : MonoBehaviour
 		for(int i = 0; i < petals.Length; i++) list.Add(new KeyValuePair<int, int>(i, petals[i].showIndex));
 		list.Sort(PetalsQueueComparer);
 
+		float animTime = petalsShowAnimation.keys[petalsShowAnimation.length - 1].time;
 		float time;
 		for(int i = 0; i < list.Count; i++)
 		{
@@ -122,10 +123,10 @@ public class PetalsController : MonoBehaviour
 
 			int index = list[i].Key;
 			time = 0f;
-			while(time < petalsShowTime)
+			while(time < animTime)
 			{
 				time += Time.deltaTime;
-				activePetals[index].petalAnchor.localScale = Vector3.Lerp(Vector3.one * 0.01f, Vector3.one, time / petalsShowTime);
+				activePetals[index].petalAnchor.localScale = Vector3.one * Mathf.Max(petalsShowAnimation.Evaluate(Mathf.Min(time, animTime)), 0.01f);
 				yield return null;
 			}
 		}

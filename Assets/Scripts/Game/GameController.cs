@@ -38,13 +38,10 @@ public class GameController : MonoBehaviour
 
 	private void OnEndAnim()
 	{
-		if(levelIndex < levels.levels.Length)
+		if(levelIndex >= levels.levels.Length)
 		{
-			flower.Init(levels.levels[levelIndex]);
+			levelIndex = Random.Range(0, levels.levels.Length);
 		}
-		else
-		{
-			//TODO: end game
-		}
+		flower.Init(levels.levels[levelIndex]);
 	}
 }
