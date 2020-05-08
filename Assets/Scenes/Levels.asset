@@ -15,19 +15,19 @@ MonoBehaviour:
   levels:
   - isHappy: 1
     petals:
-    - color: {r: 1, g: 1, b: 1, a: 1}
+    - color: {r: 0.9, g: 0.9, b: 0.9, a: 1}
       showIndex: 5
-    - color: {r: 1, g: 0, b: 0, a: 1}
+    - color: {r: 0.9, g: 0, b: 0, a: 1}
       showIndex: 6
-    - color: {r: 0, g: 1, b: 0, a: 1}
+    - color: {r: 0, g: 0.9, b: 0, a: 1}
       showIndex: 4
-    - color: {r: 1, g: 1, b: 0, a: 1}
+    - color: {r: 0.9, g: 0.9, b: 0, a: 1}
       showIndex: 0
-    - color: {r: 0, g: 1, b: 1, a: 1}
+    - color: {r: 0, g: 0.9, b: 0.9, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0, b: 0, a: 1}
+    - color: {r: 0.9, g: 0, b: 0, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 1, b: 1, a: 1}
+    - color: {r: 0, g: 0.9, b: 0.9, a: 1}
       showIndex: 1
   - isHappy: 1
     petals:

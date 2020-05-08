@@ -8,15 +8,15 @@ using UnityEngine;
 public class FlowerPetal : FlowerDraggable
 {
 	[SerializeField]
-	private Transform endBone = null;
+	private PetalDrop petalDropPrefab = null;
 	[SerializeField]
-	private Transform target = null;
+	private Transform endBone = null;
 	[SerializeField]
 	private FastIKFabric ik = null;
 	[SerializeField]
-	private Transform[] bones = null;
+	private Transform target = null;
 	[SerializeField]
-	private PetalDrop petalDropPrefab = null;
+	private Transform[] bones = null;
 	[SerializeField]
 	private Vector3 pickOffset = Vector3.back;
 
@@ -30,7 +30,6 @@ public class FlowerPetal : FlowerDraggable
 	public Color color { get; private set; }
 
 	private float petalSize;
-	private Vector3 boneOffset;
 	private Vector3 targetOffset;
 
 	private Vector3 nextPos;
@@ -47,7 +46,6 @@ public class FlowerPetal : FlowerDraggable
 		anchor.localRotation = rotation;
 		targetRotation = rotation;
 
-		boneOffset = endBone.position - anchor.position;
 		lastPos = anchor.position;
 
 		if(!isInited) InitInternal();

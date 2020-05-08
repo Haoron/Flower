@@ -110,7 +110,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea34ba469b53d4f448acb49f4686160f, type: 2}
+  - {fileID: 2100000, guid: 30e6eb76eeef7e54a901aaaae6a289bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -241,17 +241,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 9164447622505068194}
+  petalDropPrefab: {fileID: 3445547180424348236, guid: cfb7673fe8c5b834a8a5b0cfc959b596,
+    type: 3}
   endBone: {fileID: 6154310508388447041}
-  target: {fileID: 7849211050993458083}
   ik: {fileID: 1860877467995012231}
+  target: {fileID: 7849211050993458083}
   bones:
   - {fileID: 4784299038068325937}
   - {fileID: 7545359946509080842}
   - {fileID: 7058896912141880226}
   - {fileID: 5447703417889675363}
   - {fileID: 6154310508388447041}
-  petalDropPrefab: {fileID: 3445547180424348236, guid: cfb7673fe8c5b834a8a5b0cfc959b596,
-    type: 3}
   pickOffset: {x: 0, y: 0, z: 1}
 --- !u!1 &5956792666606795079
 GameObject:
