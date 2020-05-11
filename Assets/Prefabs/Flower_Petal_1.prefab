@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504579551969835176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0.41550002}
+  m_LocalPosition: {x: 0, y: 0.202, z: 0.595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8659868905027102372}
@@ -157,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4776044810728303075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.83100015}
+  m_LocalPosition: {x: 0, y: 0.053, z: 0.901}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8659868905027102372}
@@ -222,7 +222,7 @@ MonoBehaviour:
   - {fileID: 7419290309543107492}
   - {fileID: 5519866166996093029}
   - {fileID: 5938031986067333959}
-  pickOffset: {x: 0, y: 0, z: 1}
+  pickOffset: {x: 0, y: 0, z: 0.5}
 --- !u!1 &6172859708513118529
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b195e83ab2be84a8e99dd3f2c5cd5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChainLength: 4
+  ChainLength: 3
   Target: {fileID: 7776977343708924837}
   Pole: {fileID: 504579551969835177}
   Iterations: 10
