@@ -27,6 +27,8 @@ public class FlowerController : MonoBehaviour
 	private Transform flowerRoot = null;
 	[SerializeField]
 	private float flowerMaxDistance = 1f;
+	[SerializeField]
+	private float flowerFloor = 1f;
 
 	[SerializeField]
 	private FlowerSounds sounds = null;
@@ -64,18 +66,14 @@ public class FlowerController : MonoBehaviour
 
 	public void MoveFace(Vector3 pos)
 	{
-		float dist = Vector3.Distance(flowerRoot.position, pos);
-		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
-		pos.z = flowerState.anchor.position.z;
+		pos = ClampPos(pos);
 		flowerState.SetPosition(pos);
 	}
 
 	public bool MovePetal(Vector3 pos)
 	{
-		float dist = Vector3.Distance(flowerRoot.position, pos);
 		float aDist = Vector3.Distance(areaCenter.position, pos);
-		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
-		pos.z = flowerState.anchor.position.z;
+		pos = ClampPos(pos);
 
 		if(aDist > areaRadius)
 		{
@@ -103,9 +101,39 @@ public class FlowerController : MonoBehaviour
 		}
 	}
 
+	private Vector3 ClampPos(Vector3 pos)
+	{
+		float dist = Vector3.Distance(flowerRoot.position, pos);
+		if(dist > flowerMaxDistance) pos = flowerRoot.position + (pos - flowerRoot.position).normalized * flowerMaxDistance;
+		if(pos.y < flowerRoot.position.y + flowerFloor) pos.y = flowerRoot.position.y + flowerFloor;
+		pos.z = flowerState.anchor.position.z;
+		return pos;
+	}
+
 	private IEnumerator EndGameRoutine(float time)
 	{
 		yield return new WaitForSeconds(time);
 		if(onEnd != null) onEnd.Invoke(flowerState.isHappy);
 	}
+
+#if UNITY_EDITOR
+	void OnDrawGizmos()
+	{
+		if(flowerRoot != null)
+		{
+			Color color = UnityEditor.Handles.color;
+			UnityEditor.Handles.color = Color.yellow;
+
+			float angle = Mathf.Acos(flowerFloor / flowerMaxDistance);
+			Vector3 floor = transform.up * flowerFloor;
+			Vector3 side = transform.right * (Mathf.Sin(angle) * flowerMaxDistance);
+			UnityEditor.Handles.DrawLine(transform.position + floor - side, transform.position + floor + side);
+
+			angle *= Mathf.Rad2Deg;
+			UnityEditor.Handles.DrawWireArc(transform.position, -transform.forward, Quaternion.Euler(0f, 0f, angle) * Vector3.up, -angle * 2f, flowerMaxDistance);
+
+			UnityEditor.Handles.color = color;
+		}
+	}
+#endif
 }
