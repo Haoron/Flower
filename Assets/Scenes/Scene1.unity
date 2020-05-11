@@ -1781,10 +1781,85 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1965241946392077177, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965241946392077177, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965241946392077177, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965241946392077177, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 3888516280400946047, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
       propertyPath: m_Name
       value: Flower_With_Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165057622370443811, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalsMoveTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165057622370443811, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalsShowAnimation.m_Curve.Array.data[1].inSlope
+      value: 0.10727175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165057622370443811, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalsShowAnimation.m_Curve.Array.data[1].outSlope
+      value: 0.10727175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165057622370443811, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalsShowAnimation.m_Curve.Array.data[1].inWeight
+      value: 0.035391033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165057622370443811, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalsShowAnimation.m_Curve.Array.data[1].time
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564611197313867728, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564611197313867728, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564611197313867728, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564611197313867728, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865512797174712785, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928623278599812707, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: flowerMaxDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090ba6219898f8a4fb43fe3d98e2b0bf, type: 3}
