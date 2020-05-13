@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Petal_2_Mat
-  m_Shader: {fileID: 4800000, guid: a6da473b89caeb1409bac856668af764, type: 3}
-  m_ShaderKeywords: TCP2_SPEC_TOON
+  m_Shader: {fileID: 4800000, guid: dd496457a855aa341b0d7b7b475a7a3a, type: 3}
+  m_ShaderKeywords: OUTLINES TCP2_ZSMOOTH_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -70,6 +70,9 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Offset1: 0
+    - _Offset2: 0
+    - _Outline: 1
     - _Parallax: 0.02
     - _RampSmooth: 0.1
     - _RampThreshold: 0.5
@@ -78,11 +81,14 @@ Material:
     - _SpecSmooth: 0.05
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TexLod: 5
     - _UVSec: 0
+    - _ZSmooth: -0.5
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
+    - _OutlineColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
     - _SColor: {r: 0.195, g: 0.195, b: 0.195, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
