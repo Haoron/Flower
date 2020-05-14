@@ -20,14 +20,16 @@ public class FlowerPetal : FlowerDraggable
 	[SerializeField]
 	private Vector3 pickOffset = Vector3.back;
 
+	[SerializeField]
+	private Color _color;
+	public Color color { get { return _color; } set { _color = value; } }
+
 	[NonSerialized, HideInInspector]
 	public int index;
 	[NonSerialized, HideInInspector]
 	public int side;
 	[NonSerialized, HideInInspector]
 	public Quaternion targetRotation;
-
-	public Color color { get; private set; }
 
 	private float petalSize;
 	private Vector3 targetOffset;
