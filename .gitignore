@@ -33,3 +33,4 @@
 /Library/EditorInstance.json
 *.exe*.log
 /Library/InspectorExpandedItems.asset
+/Library/expandedItems
