@@ -17,6 +17,7 @@ public class FlowerStateController : MonoBehaviour
 	public bool isIdle { get { return animator.GetCurrentAnimatorStateInfo(0).IsTag("Idle"); } }
 
 	private bool animEnabled = true;
+	private Vector3 targetPos;
 
 	public void Init(bool isHappy)
 	{
@@ -34,6 +35,10 @@ public class FlowerStateController : MonoBehaviour
 			float delta = Time.deltaTime * restoreSpeed;
 			_anchor.localPosition = Vector3.Lerp(_anchor.localPosition, Vector3.zero, delta);
 		}
+		else
+		{
+			_anchor.position = targetPos;
+		}
 	}
 
 	public void Toggle()
@@ -43,13 +48,21 @@ public class FlowerStateController : MonoBehaviour
 		animator.SetTrigger("ToggleMood");
 	}
 
+	public bool SetPosition(Vector3 pos)
+	{
+		if(animEnabled) return false;
+		_anchor.position = pos;
+		targetPos = pos;
+		return true;
+	}
+
 	public void SetState(FlowerState state)
 	{
-		if(state == FlowerState.None)
+		if(this.state != state && this.state != FlowerState.None)
 		{
 			animator.SetBool(this.state.ToString(), false);
 		}
-		else
+		if(state != FlowerState.None)
 		{
 			animator.SetBool(state.ToString(), true);
 		}
@@ -59,7 +72,7 @@ public class FlowerStateController : MonoBehaviour
 	public void SetAnimation(bool enabled)
 	{
 		animEnabled = enabled;
-		animator.enabled = enabled;
+		targetPos = _anchor.position;
 	}
 
 	public void PlayAnimation(string name, float lerpTime, System.Action callback)
@@ -83,12 +96,5 @@ public class FlowerStateController : MonoBehaviour
 		}
 		while(info.IsName(name));
 		if(callback != null) callback.Invoke();
-	}
-
-	public bool SetPosition(Vector3 pos)
-	{
-		if(animEnabled) return false;
-		_anchor.position = pos;
-		return true;
 	}
 }
