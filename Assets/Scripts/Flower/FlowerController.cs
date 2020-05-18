@@ -92,7 +92,7 @@ public class FlowerController : MonoBehaviour
 		SetAnimation(true);
 		SetState(FlowerState.None);
 
-		float time = sounds.Play(FlowerSound.PetalRemove, 0.1f);
+		float time = sounds.PlayPetalRemove(index, 0.1f);
 
 		flowerPetals.RemovePetal(index);
 		if(flowerPetals.count <= 0)

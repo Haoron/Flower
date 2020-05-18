@@ -119,7 +119,7 @@ public class PetalsController : MonoBehaviour
 		float time;
 		for(int i = 0; i < list.Count; i++)
 		{
-			sounds.Play(FlowerSound.PetalCreate, 0.1f);
+			sounds.PlayPetalCreate(i, 0.1f);
 
 			int index = list[i].Key;
 			time = 0f;
