@@ -4167,6 +4167,16 @@ PrefabInstance:
     - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
       propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.size
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
@@ -4239,6 +4249,76 @@ PrefabInstance:
       propertyPath: sounds.Array.data[6].clip
       value: 
       objectReference: {fileID: 8300000, guid: 65823ab1210768b48a84f2b2db26cdb5, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 65823ab1210768b48a84f2b2db26cdb5, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4fbd93b623dea4f49a2a66e8ba978a13, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: beb135f19acbdb04b98719e87fc0cdd0, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c13782ca4d1299140b8862cc3776a547, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: a9904fb6f17c3c74e907277ab7a250b7, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57b87c8ddbb6d59469e43b79a7e093be, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalRemove.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: d802c05f78731ad4ca66d2dea3115cd1, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 30eed14758d3f734bbc2d570b2df84d4, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d4276b993ff15da49848214954a5249a, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 420c1ad28bdefad4888a64b5b4d45f42, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f7a5234d92748b242b0c567b00150ae0, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 737b21e0e4add7141b1a1dbd638750d4, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7a59b5eba2dddf46865d06eb57fc3ab, type: 3}
+    - target: {fileID: 4268261547596990365, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: petalCreate.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f375f5b530d2154283bb6d930f099af, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090ba6219898f8a4fb43fe3d98e2b0bf, type: 3}
 --- !u!114 &6543451394599688054 stripped
