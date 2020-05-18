@@ -34,3 +34,4 @@
 *.exe*.log
 /Library/InspectorExpandedItems.asset
 /Library/expandedItems
+/Library/ShaderCache.db
