@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Levels
   m_EditorClassIdentifier: 
   levels:
-  - isHappy: 1
+  - isHappy: 0
     petals:
     - color: {r: 0, g: 0.94117653, b: 1, a: 1}
       showIndex: 5
