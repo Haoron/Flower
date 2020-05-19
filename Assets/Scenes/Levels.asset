@@ -15,33 +15,45 @@ MonoBehaviour:
   levels:
   - isHappy: 0
     petals:
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
-      showIndex: 5
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
-      showIndex: 6
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
-      showIndex: 4
-    - color: {r: 0.024830908, g: 0.8773585, b: 0.13181476, a: 1}
-      showIndex: 0
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
       showIndex: 1
   - isHappy: 1
     petals:
-    - color: {r: 1, g: 1, b: 1, a: 1}
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0, b: 0.030120373, a: 1}
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 2
-    - color: {r: 0.098039225, g: 0.50980395, b: 0.7686275, a: 1}
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
-      showIndex: 4
-    - color: {r: 0.42253494, g: 0, b: 1, a: 1}
-      showIndex: 5
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
-      showIndex: 6
-    - color: {r: 0.4156863, g: 0.29803923, b: 0.5764706, a: 1}
-      showIndex: 7
+  - isHappy: 0
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    petals:
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
