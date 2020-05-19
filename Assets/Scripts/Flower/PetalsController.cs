@@ -35,6 +35,7 @@ public class PetalsController : MonoBehaviour
 	private Quaternion[] slots;
 
 	private FlowerPetal merge = null;
+	private int removeIndex;
 
 	public void SetPetals(FlowerController flower, Levels.PetalInfo[] petals)
 	{
@@ -56,6 +57,7 @@ public class PetalsController : MonoBehaviour
 			activePetals[i].gameObject.SetActive(true);
 		}
 		isAnimate = true;
+		removeIndex = 0;
 		StartCoroutine(ShowPetalsRoutine(petals));
 	}
 
@@ -78,13 +80,13 @@ public class PetalsController : MonoBehaviour
 		return isMoved;
 	}
 
-	public void RemovePetal(int index)
+	public float RemovePetal(int index)
 	{
 		int side = activePetals[index].side;
 		activePetals[index].gameObject.SetActive(false);
 		activePetals[index] = null;
 		count--;
-		if(count <= 0) return;
+		if(count <= 0) return 0f;
 
 		isAnimate |= ShiftPetals(index, side);
 		int pos = (index + 1) % activePetals.Length;
@@ -107,6 +109,10 @@ public class PetalsController : MonoBehaviour
 			}
 		}
 		if(isAnimate) StartCoroutine(MovePetalsRoutine());
+
+		float time = sounds.PlayPetalRemove(removeIndex, 0.1f);
+		removeIndex++;
+		return time;
 	}
 
 	private IEnumerator ShowPetalsRoutine(Levels.PetalInfo[] petals)
