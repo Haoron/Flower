@@ -21,7 +21,7 @@ MonoBehaviour:
       showIndex: 6
     - color: {r: 0.45098042, g: 0, b: 1, a: 1}
       showIndex: 4
-    - color: {r: 0, g: 1, b: 0.1254902, a: 1}
+    - color: {r: 0.024830908, g: 0.8773585, b: 0.13181476, a: 1}
       showIndex: 0
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 3
