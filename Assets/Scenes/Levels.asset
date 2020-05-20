@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - isHappy: 0
+    slots: 0
+    angle: 0
     petals:
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 1
   - isHappy: 1
+    slots: 7
+    angle: 0
     petals:
     - color: {r: 0, g: 0.5764706, b: 1, a: 1}
       showIndex: 1
@@ -26,6 +30,8 @@ MonoBehaviour:
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 3
   - isHappy: 0
+    slots: 0
+    angle: 0
     petals:
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 1
@@ -34,6 +40,8 @@ MonoBehaviour:
     - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
       showIndex: 3
   - isHappy: 0
+    slots: 0
+    angle: 0
     petals:
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 1
@@ -42,6 +50,8 @@ MonoBehaviour:
     - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
       showIndex: 3
   - isHappy: 0
+    slots: 0
+    angle: 0
     petals:
     - color: {r: 0, g: 0.5764706, b: 1, a: 1}
       showIndex: 1

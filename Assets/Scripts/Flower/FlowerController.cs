@@ -39,7 +39,7 @@ public class FlowerController : MonoBehaviour
 	{
 		flowerFace.flower = this;
 		flowerState.Init(config.isHappy);
-		flowerPetals.SetPetals(this, config.petals);
+		flowerPetals.SetPetals(this, config);
 	}
 
 	public bool CanInteract() { return !flowerPetals.isAnimate && flowerState.state == FlowerState.None && flowerState.isIdle; }

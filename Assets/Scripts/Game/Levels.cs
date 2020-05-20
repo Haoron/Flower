@@ -9,6 +9,9 @@ public class Levels : ScriptableObject
 	public struct FlowerConfiguration
 	{
 		public bool isHappy;
+		public int slots;
+		[Range(-180f, 180f)]
+		public float angle;
 		public PetalInfo[] petals;
 	}
 

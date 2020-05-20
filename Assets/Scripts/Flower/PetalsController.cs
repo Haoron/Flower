@@ -12,6 +12,9 @@ public class PetalsController : MonoBehaviour
 	[SerializeField]
 	private FlowerSounds sounds = null;
 
+	[SerializeField, Range(-180f, 180f)]
+	private float angle;
+
 	public bool isAnimate { get; private set; }
 	public int count { get; private set; }
 
@@ -37,28 +40,40 @@ public class PetalsController : MonoBehaviour
 	private FlowerPetal merge = null;
 	private int removeIndex;
 
-	public void SetPetals(FlowerController flower, Levels.PetalInfo[] petals)
+	public void SetPetals(FlowerController flower, Levels.FlowerConfiguration config)
 	{
+		var petals = config.petals;
+		this.angle = config.angle;
 		this.count = petals.Length;
-		activePetals = new FlowerPetal[petals.Length];
-		slots = new Quaternion[petals.Length];
-		float angle = 360f / petals.Length;
-		int half = activePetals.Length / 2;
-		for(int i = 0; i < petals.Length; i++)
+
+		int len = Mathf.Max(config.slots, petals.Length);
+		slots = new Quaternion[len];
+		float angle = 360f / len;
+		for(int i = 0; i < len; i++)
 		{
+			slots[i] = Quaternion.Euler(0f, angle * i + config.angle, 0f);
+		}
+
+		var list = new List<KeyValuePair<int, int>>(petals.Length);
+		activePetals = new FlowerPetal[len];
+		int half = petals.Length / 2;
+		for(int j = 0, i; j < petals.Length; j++)
+		{
+			i = j > half ? (len - (petals.Length - j)) : j;
 			activePetals[i] = allPetals[i];
 			activePetals[i].flower = flower;
 			activePetals[i].index = i;
+			list.Add(new KeyValuePair<int, int>(i, petals[j].showIndex));
 
-			slots[i] = Quaternion.Euler(0f, angle * i, 0f);
-			activePetals[i].Init(slots[i], petals[i].color, i == 0 ? 0 : (i > half ? -1 : 1));
+			activePetals[i].Init(slots[i], petals[j].color, i == 0 ? 0 : (i > half ? -1 : 1));
 
 			activePetals[i].petalAnchor.localScale = Vector3.one * 0.01f;
 			activePetals[i].gameObject.SetActive(true);
 		}
 		isAnimate = true;
 		removeIndex = 0;
-		StartCoroutine(ShowPetalsRoutine(petals));
+		list.Sort(PetalsQueueComparer);
+		StartCoroutine(ShowPetalsRoutine(list.ConvertAll(x => x.Key)));
 	}
 
 	public bool ShiftPetals(int toIndex, int side)
@@ -115,19 +130,15 @@ public class PetalsController : MonoBehaviour
 		return time;
 	}
 
-	private IEnumerator ShowPetalsRoutine(Levels.PetalInfo[] petals)
+	private IEnumerator ShowPetalsRoutine(List<int> list)
 	{
-		var list = new List<KeyValuePair<int, int>>(petals.Length);
-		for(int i = 0; i < petals.Length; i++) list.Add(new KeyValuePair<int, int>(i, petals[i].showIndex));
-		list.Sort(PetalsQueueComparer);
-
 		float animTime = petalsShowAnimation.keys[petalsShowAnimation.length - 1].time;
 		float time;
 		for(int i = 0; i < list.Count; i++)
 		{
 			sounds.PlayPetalCreate(i, 0.1f);
 
-			int index = list[i].Key;
+			int index = list[i];
 			time = 0f;
 			while(time < animTime)
 			{
@@ -162,4 +173,23 @@ public class PetalsController : MonoBehaviour
 		if(merge != null) merge.gameObject.SetActive(false);
 		merge = null;
 	}
+
+#if UNITY_EDITOR
+	void OnValidate()
+	{
+		if(Application.isPlaying && slots != null && activePetals != null)
+		{
+			float angle = 360f / slots.Length;
+			for(int i = 0; i < slots.Length; i++)
+			{
+				slots[i] = Quaternion.Euler(0f, angle * i + this.angle, 0f);
+			}
+			for(int i = 0; i < activePetals.Length; i++)
+			{
+				activePetals[i].targetRotation = slots[activePetals[i].index];
+				activePetals[i].petalAnchor.localRotation = activePetals[i].targetRotation;
+			}
+		}
+	}
+#endif
 }
