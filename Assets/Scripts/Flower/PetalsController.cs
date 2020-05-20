@@ -37,7 +37,7 @@ public class PetalsController : MonoBehaviour
 	private FlowerPetal[] activePetals;
 	private Quaternion[] slots;
 
-	private FlowerPetal merge = null;
+	private List<FlowerPetal> merge = new List<FlowerPetal>();
 	private int removeIndex;
 
 	public void SetPetals(FlowerController flower, Levels.FlowerConfiguration config)
@@ -45,6 +45,8 @@ public class PetalsController : MonoBehaviour
 		var petals = config.petals;
 		this.angle = config.angle;
 		this.count = petals.Length;
+
+		for(int i = 0; i < allPetals.Length; i++) allPetals[i].gameObject.SetActive(false);
 
 		int len = Mathf.Max(config.slots, petals.Length);
 		slots = new Quaternion[len];
@@ -59,7 +61,7 @@ public class PetalsController : MonoBehaviour
 		int half = petals.Length / 2;
 		for(int j = 0, i; j < petals.Length; j++)
 		{
-			i = j > half ? (len - (petals.Length - j)) : j;
+			i = j > half ? (activePetals.Length - (petals.Length - j)) : j;
 			activePetals[i] = allPetals[i];
 			activePetals[i].flower = flower;
 			activePetals[i].index = i;
@@ -76,10 +78,60 @@ public class PetalsController : MonoBehaviour
 		StartCoroutine(ShowPetalsRoutine(list.ConvertAll(x => x.Key)));
 	}
 
-	public bool ShiftPetals(int toIndex, int side)
+	public float RemovePetal(int index)
+	{
+		int side = activePetals[index].side;
+		activePetals[index].gameObject.SetActive(false);
+		activePetals[index] = null;
+		count--;
+		if(count <= 0) return 0f;
+
+		isAnimate |= ShiftPetals(index, side);
+		CollapsePetals();
+		if(isAnimate) StartCoroutine(MovePetalsRoutine());
+
+		float time = sounds.PlayPetalRemove(removeIndex, 0.1f);
+		removeIndex++;
+		return time;
+	}
+
+	private void CollapsePetals()
+	{
+		int len = activePetals.Length / 2;
+		int prev = 0;
+		for(int i = 1; i <= len; i++)
+		{
+			if(activePetals[i] == null) break;
+			if(activePetals[prev].color == activePetals[i].color)
+			{
+				merge.Add(activePetals[prev]);
+				isAnimate |= ShiftPetals(prev, 1);
+				count--;
+				i--;
+			}
+			else prev = i;
+		}
+		len = (activePetals.Length - 1) / 2;
+		prev = 0;
+		for(int j = -1, i; j >= -len; j--)
+		{
+			i = activePetals.Length + j;
+			if(activePetals[i] == null) break;
+			if(activePetals[prev].color == activePetals[i].color)
+			{
+				merge.Add(activePetals[prev]);
+				isAnimate |= ShiftPetals(prev, -1);
+				count--;
+				j++;
+			}
+			else prev = i;
+		}
+	}
+
+	private bool ShiftPetals(int toIndex, int side)
 	{
 		bool isMoved = false;
-		if(side == 0) side = activePetals[1] ? 1 : -1;
+		if(side == 0) side = activePetals[1] ? activePetals[1].side : -1;
 		for(int i = toIndex;; i = (i + side + activePetals.Length) % activePetals.Length)
 		{
 			int k = (i + side + activePetals.Length) % activePetals.Length;
@@ -93,41 +145,6 @@ public class PetalsController : MonoBehaviour
 			isMoved = true;
 		}
 		return isMoved;
-	}
-
-	public float RemovePetal(int index)
-	{
-		int side = activePetals[index].side;
-		activePetals[index].gameObject.SetActive(false);
-		activePetals[index] = null;
-		count--;
-		if(count <= 0) return 0f;
-
-		isAnimate |= ShiftPetals(index, side);
-		int pos = (index + 1) % activePetals.Length;
-		if(side <= 0 && activePetals[pos] && activePetals[index] && activePetals[pos].color == activePetals[index].color)
-		{
-			merge = activePetals[index == 0 ? 0 : pos];
-			if(index == 0) isAnimate |= ShiftPetals(0, 1);
-			else isAnimate |= ShiftPetals(pos, -1);
-			count--;
-		}
-		else
-		{
-			int neg = (index - 1 + activePetals.Length) % activePetals.Length;
-			if(side >= 0 && activePetals[neg] && activePetals[index] && activePetals[neg].color == activePetals[index].color)
-			{
-				merge = activePetals[index == 0 ? 0 : neg];
-				if(index == 0) isAnimate |= ShiftPetals(0, -1);
-				else isAnimate |= ShiftPetals(neg, 1);
-				count--;
-			}
-		}
-		if(isAnimate) StartCoroutine(MovePetalsRoutine());
-
-		float time = sounds.PlayPetalRemove(removeIndex, 0.1f);
-		removeIndex++;
-		return time;
 	}
 
 	private IEnumerator ShowPetalsRoutine(List<int> list)
@@ -148,6 +165,8 @@ public class PetalsController : MonoBehaviour
 			}
 		}
 		isAnimate = false;
+		CollapsePetals();
+		if(isAnimate) yield return MovePetalsRoutine();
 	}
 
 	private int PetalsQueueComparer(KeyValuePair<int, int> a, KeyValuePair<int, int> b)
@@ -166,12 +185,15 @@ public class PetalsController : MonoBehaviour
 				if(activePetals[i] == null) continue;
 				activePetals[i].petalAnchor.localRotation = Quaternion.Lerp(activePetals[i].petalAnchor.localRotation, activePetals[i].targetRotation, time / petalsMoveTime);
 			}
-			if(merge != null) merge.petalAnchor.localRotation = Quaternion.Lerp(merge.petalAnchor.localRotation, merge.targetRotation, time / petalsMoveTime);
+			for(int i = 0; i < merge.Count; i++)
+			{
+				merge[i].petalAnchor.localRotation = Quaternion.Lerp(merge[i].petalAnchor.localRotation, merge[i].targetRotation, time / petalsMoveTime);
+			}
 			yield return null;
 		}
 		isAnimate = false;
-		if(merge != null) merge.gameObject.SetActive(false);
-		merge = null;
+		for(int i = 0; i < merge.Count; i++) merge[i].gameObject.SetActive(false);
+		merge.Clear();
 	}
 
 #if UNITY_EDITOR
