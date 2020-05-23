@@ -21,6 +21,9 @@ public class FlowerPetal : FlowerDraggable
 	private Vector3 pickOffset = Vector3.back;
 
 	[SerializeField]
+	private ParticleSystem mergeParticles = null;
+
+	[SerializeField]
 	private Color _color;
 	public Color color { get { return _color; } set { _color = value; } }
 
@@ -52,6 +55,19 @@ public class FlowerPetal : FlowerDraggable
 
 		if(!isInited) InitInternal();
 		target.localPosition = targetOffset;
+		mergeParticles.Stop(true);
+	}
+
+	public void StartMerge()
+	{
+		var main = mergeParticles.main;
+		main.startColor = color;
+		mergeParticles.Play(true);
+	}
+
+	public void StopMerge()
+	{
+		mergeParticles.Stop(true);
 	}
 
 #if UNITY_EDITOR

@@ -105,7 +105,9 @@ public class PetalsController : MonoBehaviour
 			if(activePetals[prev].color == activePetals[i].color)
 			{
 				merge.Add(activePetals[prev]);
+				activePetals[prev].StopMerge();
 				isAnimate |= ShiftPetals(prev, 1);
+				activePetals[prev].StartMerge();
 				count--;
 				i--;
 			}
@@ -120,7 +122,9 @@ public class PetalsController : MonoBehaviour
 			if(activePetals[prev].color == activePetals[i].color)
 			{
 				merge.Add(activePetals[prev]);
+				activePetals[prev].StopMerge();
 				isAnimate |= ShiftPetals(prev, -1);
+				activePetals[prev].StartMerge();
 				count--;
 				j++;
 			}

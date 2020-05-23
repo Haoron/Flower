@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +27,7 @@ public class UIController : MonoBehaviour
 		setLevelBtn.onClick.AddListener(SetLevel);
 #endif
 		game.onGameEnd += ShowEndGame;
+		game.onStateChange += ShowState;
 		game.onLevelUpdate += UpdateLevel;
 	}
 
@@ -35,6 +37,7 @@ public class UIController : MonoBehaviour
 		setLevelBtn.onClick.RemoveListener(SetLevel);
 #endif
 		game.onGameEnd -= ShowEndGame;
+		game.onStateChange -= ShowState;
 		game.onLevelUpdate -= UpdateLevel;
 	}
 
@@ -44,6 +47,11 @@ public class UIController : MonoBehaviour
 		game.ReplaceLevel(int.Parse(setLevelText.text));
 	}
 #endif
+
+	private void ShowState(bool isHappy)
+	{
+		animator.SetBool("IsHappy", isHappy);
+	}
 
 	private void UpdateLevel(int index)
 	{

@@ -34,12 +34,14 @@ public class FlowerController : MonoBehaviour
 	private FlowerSounds sounds = null;
 
 	public System.Action<bool> onEnd;
+	public System.Action<bool> onStateChange;
 
 	public void Init(Levels.FlowerConfiguration config)
 	{
 		flowerFace.flower = this;
 		flowerState.Init(config.isHappy);
 		flowerPetals.SetPetals(this, config);
+		if(onStateChange != null) onStateChange.Invoke(config.isHappy);
 	}
 
 	public bool CanInteract() { return !flowerPetals.isAnimate && flowerState.state == FlowerState.None && flowerState.isIdle; }
@@ -89,6 +91,8 @@ public class FlowerController : MonoBehaviour
 	public void RemovePetal(int index)
 	{
 		flowerState.Toggle();
+		if(onStateChange != null) onStateChange.Invoke(flowerState.isHappy);
+
 		SetAnimation(true);
 		SetState(FlowerState.None);
 

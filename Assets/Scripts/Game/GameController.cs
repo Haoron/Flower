@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameController : MonoBehaviour
 	private AudioClip loseClip = null;
 
 	public System.Action<bool> onGameEnd;
+	public System.Action<bool> onStateChange;
 	public System.Action<int> onLevelUpdate;
 
 	private int levelIndex;
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
 	void Awake()
 	{
 		flower.onEnd += OnEndGame;
+		flower.onStateChange += OnStateChange;
 
 		levelIndex = 0;
 		StartLevel();
@@ -31,6 +34,12 @@ public class GameController : MonoBehaviour
 	void OnDestroy()
 	{
 		flower.onEnd -= OnEndGame;
+		flower.onStateChange -= OnStateChange;
+	}
+
+	private void OnStateChange(bool isHappy)
+	{
+		if(onStateChange != null) onStateChange.Invoke(isHappy);
 	}
 
 	public System.Action UIAnimCallback()
@@ -72,7 +81,7 @@ public class GameController : MonoBehaviour
 	{
 		if(levelIndex >= levels.levels.Length)
 		{
-			levelIndex = Random.Range(0, levels.levels.Length);
+			levelIndex = UnityEngine.Random.Range(0, levels.levels.Length);
 		}
 		flower.Init(levels.levels[levelIndex]);
 		if(onLevelUpdate != null) onLevelUpdate.Invoke(levelIndex);
