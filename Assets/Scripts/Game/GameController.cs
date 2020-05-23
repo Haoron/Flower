@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -58,6 +57,8 @@ public class GameController : MonoBehaviour
 
 	private void OnEndGame(bool isHappy)
 	{
+		Analytics.LevelInfo(isHappy ? Analytics.LevelState.Complete : Analytics.LevelState.Fail, levelIndex);
+
 		if(isHappy) levelIndex++;
 		hasPlayedAnim = false;
 		source.PlayOneShot(isHappy ? winClip : loseClip);
@@ -83,7 +84,9 @@ public class GameController : MonoBehaviour
 		{
 			levelIndex = UnityEngine.Random.Range(0, levels.levels.Length);
 		}
+
 		flower.Init(levels.levels[levelIndex]);
+		Analytics.LevelInfo(Analytics.LevelState.Start, levelIndex);
 		if(onLevelUpdate != null) onLevelUpdate.Invoke(levelIndex);
 	}
 }
