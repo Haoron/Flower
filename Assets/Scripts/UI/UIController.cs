@@ -55,7 +55,7 @@ public class UIController : MonoBehaviour
 
 	private void UpdateLevel(int index)
 	{
-		levelText.text = string.Format("LV: {0}", index + 1);
+		levelText.text = string.Format("{0}", index + 1);
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
 		setLevelText.text = index.ToString();
 #endif
