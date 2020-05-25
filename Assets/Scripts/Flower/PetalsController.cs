@@ -18,6 +18,8 @@ public class PetalsController : MonoBehaviour
 	public bool isAnimate { get; private set; }
 	public int count { get; private set; }
 
+	public System.Action onPetalsShown;
+
 	private FlowerPetal[] _allPetals = null;
 	private FlowerPetal[] allPetals
 	{
@@ -171,6 +173,8 @@ public class PetalsController : MonoBehaviour
 		isAnimate = false;
 		CollapsePetals();
 		if(isAnimate) yield return MovePetalsRoutine();
+
+		if(onPetalsShown != null) onPetalsShown.Invoke();
 	}
 
 	private int PetalsQueueComparer(KeyValuePair<int, int> a, KeyValuePair<int, int> b)
