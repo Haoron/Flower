@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
 	private const string LEVEL_FORMAT = "{0}";
+	private const string TUTOR_PARAMETER = "Tutorial";
+	private const string TASK_PARAMETER = "Task";
 
 	[SerializeField]
 	private GameController game = null;
@@ -18,12 +20,18 @@ public class UIController : MonoBehaviour
 	[SerializeField]
 	private TMP_Text levelText = null;
 
+	[SerializeField]
+	private float tutorialTimer = 10f;
+
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
 	[SerializeField]
 	private TMP_InputField setLevelText = null;
 	[SerializeField]
 	private Button setLevelBtn = null;
 #endif
+
+	private bool canShowTutorial = false;
+	private float tutorTime = 0f;
 
 	void Awake()
 	{
@@ -33,6 +41,7 @@ public class UIController : MonoBehaviour
 		game.onGameEnd += ShowEndGame;
 		game.onStateChange += ShowState;
 		game.onLevelUpdate += UpdateLevel;
+		game.onPetalsShown += OnPetalsShown;
 	}
 
 	void OnDestroy()
@@ -43,6 +52,29 @@ public class UIController : MonoBehaviour
 		game.onGameEnd -= ShowEndGame;
 		game.onStateChange -= ShowState;
 		game.onLevelUpdate -= UpdateLevel;
+		game.onPetalsShown -= OnPetalsShown;
+	}
+
+	void Update()
+	{
+		if(canShowTutorial)
+		{
+			if(Input.touchCount > 0 || Input.GetMouseButton(0))
+			{
+				if(tutorTime >= tutorialTimer)
+				{
+					animator.SetBool(TUTOR_PARAMETER, false);
+				}
+			}
+			else
+			{
+				if(tutorTime < tutorialTimer)
+				{
+					tutorTime += Time.deltaTime;
+					if(tutorTime >= tutorialTimer) animator.SetBool(TUTOR_PARAMETER, true);
+				}
+			}
+		}
 	}
 
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
@@ -52,6 +84,12 @@ public class UIController : MonoBehaviour
 	}
 #endif
 
+	private void OnPetalsShown()
+	{
+		canShowTutorial = true;
+		tutorTime = 0f;
+	}
+
 	private void ShowState(bool isHappy)
 	{
 		animator.SetBool("IsHappy", isHappy);
@@ -59,6 +97,10 @@ public class UIController : MonoBehaviour
 
 	private void UpdateLevel(int index)
 	{
+		animator.SetBool(TUTOR_PARAMETER, false);
+		animator.SetTrigger(TASK_PARAMETER);
+
+		canShowTutorial = false;
 		levelText.text = string.Format(LEVEL_FORMAT, index + 1);
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
 		setLevelText.text = index.ToString();

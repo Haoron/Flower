@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class FlowerController : MonoBehaviour
@@ -35,6 +36,7 @@ public class FlowerController : MonoBehaviour
 
 	public System.Action<bool> onEnd;
 	public System.Action<bool> onStateChange;
+	public System.Action onPetalsShown;
 
 	public void Init(Levels.FlowerConfiguration config)
 	{
@@ -42,6 +44,16 @@ public class FlowerController : MonoBehaviour
 		flowerState.Init(config.isHappy);
 		flowerPetals.SetPetals(this, config);
 		if(onStateChange != null) onStateChange.Invoke(config.isHappy);
+	}
+
+	void Awake()
+	{
+		flowerPetals.onPetalsShown += OnPetalsShown;
+	}
+
+	void OnDestroy()
+	{
+		flowerPetals.onPetalsShown += OnPetalsShown;
 	}
 
 	public bool CanInteract() { return !flowerPetals.isAnimate && flowerState.state == FlowerState.None && flowerState.isIdle; }
@@ -101,6 +113,11 @@ public class FlowerController : MonoBehaviour
 		{
 			StartCoroutine(EndGameRoutine(time));
 		}
+	}
+
+	private void OnPetalsShown()
+	{
+		if(onPetalsShown != null) onPetalsShown.Invoke();
 	}
 
 	private Vector3 ClampPos(Vector3 pos)

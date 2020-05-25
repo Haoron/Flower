@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour
 	public System.Action<bool, int> onGameEnd;
 	public System.Action<bool> onStateChange;
 	public System.Action<int> onLevelUpdate;
+	public System.Action onPetalsShown;
 
 	private int levelIndex;
 	private bool hasPlayedAnim = false;
@@ -25,6 +27,7 @@ public class GameController : MonoBehaviour
 	{
 		flower.onEnd += OnEndGame;
 		flower.onStateChange += OnStateChange;
+		flower.onPetalsShown += OnPetalsShown;
 
 		levelIndex = 0;
 		StartLevel();
@@ -34,6 +37,13 @@ public class GameController : MonoBehaviour
 	{
 		flower.onEnd -= OnEndGame;
 		flower.onStateChange -= OnStateChange;
+		flower.onPetalsShown -= OnPetalsShown;
+	}
+
+	private void OnPetalsShown()
+	{
+		if(onPetalsShown != null) onPetalsShown.Invoke();
+		//TODO: show ad
 	}
 
 	private void OnStateChange(bool isHappy)
