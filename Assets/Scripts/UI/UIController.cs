@@ -6,11 +6,15 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+	private const string LEVEL_FORMAT = "{0}";
+
 	[SerializeField]
 	private GameController game = null;
 	[SerializeField]
 	private Animator animator = null;
 
+	[SerializeField]
+	private TMP_Text oldLevelText = null;
 	[SerializeField]
 	private TMP_Text levelText = null;
 
@@ -55,15 +59,23 @@ public class UIController : MonoBehaviour
 
 	private void UpdateLevel(int index)
 	{
-		levelText.text = string.Format("{0}", index + 1);
+		levelText.text = string.Format(LEVEL_FORMAT, index + 1);
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
 		setLevelText.text = index.ToString();
 #endif
 	}
 
-	private void ShowEndGame(bool win)
+	private void ShowEndGame(bool win, int nextLevelIndex)
 	{
 		PlayAnimation(win ? "Win" : "Lose", game.UIAnimCallback());
+		if(win)
+		{
+			oldLevelText.text = levelText.text;
+			levelText.text = string.Format(LEVEL_FORMAT, nextLevelIndex + 1);
+
+			oldLevelText.gameObject.SetActive(true);
+			levelText.gameObject.SetActive(false);
+		}
 	}
 
 	public void PlayAnimation(string name, System.Action callback)

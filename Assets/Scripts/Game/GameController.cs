@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
 	[SerializeField]
 	private AudioClip loseClip = null;
 
-	public System.Action<bool> onGameEnd;
+	public System.Action<bool, int> onGameEnd;
 	public System.Action<bool> onStateChange;
 	public System.Action<int> onLevelUpdate;
 
@@ -59,11 +59,19 @@ public class GameController : MonoBehaviour
 	{
 		Analytics.LevelInfo(isHappy ? Analytics.LevelState.Complete : Analytics.LevelState.Fail, levelIndex);
 
-		if(isHappy) levelIndex++;
+		if(isHappy)
+		{
+			levelIndex++;
+			if(levelIndex >= levels.levels.Length)
+			{
+				levelIndex = UnityEngine.Random.Range(0, levels.levels.Length);
+			}
+		}
+		
 		hasPlayedAnim = false;
 		source.PlayOneShot(isHappy ? winClip : loseClip);
 		flower.PlayAnimation(isHappy ? "Win" : "Lose", 0.05f, OnEndFlowerAnim);
-		if(onGameEnd != null) onGameEnd.Invoke(isHappy);
+		if(onGameEnd != null) onGameEnd.Invoke(isHappy, levelIndex);
 	}
 
 	private void OnEndUIAnim()
@@ -80,11 +88,6 @@ public class GameController : MonoBehaviour
 
 	private void StartLevel()
 	{
-		if(levelIndex >= levels.levels.Length)
-		{
-			levelIndex = UnityEngine.Random.Range(0, levels.levels.Length);
-		}
-
 		flower.Init(levels.levels[levelIndex]);
 		Analytics.LevelInfo(Analytics.LevelState.Start, levelIndex);
 		if(onLevelUpdate != null) onLevelUpdate.Invoke(levelIndex);
