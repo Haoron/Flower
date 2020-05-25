@@ -43,7 +43,6 @@ public class GameController : MonoBehaviour
 	private void OnPetalsShown()
 	{
 		if(onPetalsShown != null) onPetalsShown.Invoke();
-		//TODO: show ad
 	}
 
 	private void OnStateChange(bool isHappy)
