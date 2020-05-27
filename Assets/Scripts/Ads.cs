@@ -4,10 +4,13 @@ using UnityEngine.Advertisements;
 
 public class Ads : MonoBehaviour
 {
+#pragma warning disable CS0414
 	[SerializeField]
 	private string gameID_IOS = "";
 	[SerializeField]
 	private string gameID_Android = "";
+#pragma warning restore CS0414
+
 	[SerializeField]
 	private bool testMode = true;
 

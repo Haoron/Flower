@@ -8,7 +8,6 @@ public class UIController : MonoBehaviour
 {
 	private const string LEVEL_FORMAT = "{0}";
 	private const string TUTOR_PARAMETER = "Tutorial";
-	private const string TASK_PARAMETER = "Task";
 
 	[SerializeField]
 	private GameController game = null;
@@ -65,6 +64,7 @@ public class UIController : MonoBehaviour
 				{
 					animator.SetBool(TUTOR_PARAMETER, false);
 				}
+				tutorTime = 0f;
 			}
 			else
 			{
@@ -86,8 +86,9 @@ public class UIController : MonoBehaviour
 
 	private void OnPetalsShown()
 	{
+		animator.SetBool(TUTOR_PARAMETER, true);
 		canShowTutorial = true;
-		tutorTime = 0f;
+		tutorTime = tutorialTimer;
 	}
 
 	private void ShowState(bool isHappy)
@@ -97,10 +98,6 @@ public class UIController : MonoBehaviour
 
 	private void UpdateLevel(int index)
 	{
-		animator.SetBool(TUTOR_PARAMETER, false);
-		animator.SetTrigger(TASK_PARAMETER);
-
-		canShowTutorial = false;
 		levelText.text = string.Format(LEVEL_FORMAT, index + 1);
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
 		setLevelText.text = index.ToString();
@@ -109,6 +106,9 @@ public class UIController : MonoBehaviour
 
 	private void ShowEndGame(bool win, int nextLevelIndex)
 	{
+		animator.SetBool(TUTOR_PARAMETER, false);
+		canShowTutorial = false;
+
 		PlayAnimation(win ? "Win" : "Lose", game.UIAnimCallback());
 		if(win)
 		{
