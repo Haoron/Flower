@@ -309,3 +309,453 @@ MonoBehaviour:
       showIndex: 3
     - color: {r: 0, g: 0.5764706, b: 1, a: 1}
       showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 1
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 2
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 1
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 1
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+      showIndex: 1
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 1
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 2
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 2
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 1
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 2
+    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+      showIndex: 3
+    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+      showIndex: 3
