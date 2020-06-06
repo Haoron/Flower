@@ -1130,6 +1130,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 135, y: -320, z: 0}
+--- !u!21 &320243741
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/GrassFX
+  m_Shader: {fileID: 4800000, guid: df5d693f3c96e004b8e2142c6c354646, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Distortion: 1
+    - _Speed: 0.45
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _Wind: 0.0213833
+    - _Wind2: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &403767263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3888516280400946047, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
@@ -1220,7 +1257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 193.6, y: -92.6}
+  m_AnchoredPosition: {x: 193.6, y: -8.26}
   m_SizeDelta: {x: 327.85715, y: 675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444611087
@@ -2429,43 +2466,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993723726}
   m_CullTransparentMesh: 0
---- !u!21 &1117449307
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/GrassFX
-  m_Shader: {fileID: 4800000, guid: df5d693f3c96e004b8e2142c6c354646, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Distortion: 1
-    - _Speed: 0.45
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _Wind: 0.1526536
-    - _Wind2: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1123228789
 GameObject:
   m_ObjectHideFlags: 0
@@ -8379,7 +8379,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1117449307}
+  - {fileID: 320243741}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9478,6 +9478,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 265027573447774572, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1088447693686800107, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -9583,6 +9598,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower_With_Rig
       objectReference: {fileID: 0}
+    - target: {fileID: 4784299036953944928, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784299036953944928, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784299036953944928, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6199373317044651165, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -9682,6 +9712,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928623278599812707, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: flowerMaxDistance
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928623278599812707, guid: 090ba6219898f8a4fb43fe3d98e2b0bf,
+        type: 3}
+      propertyPath: flowerFloor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090ba6219898f8a4fb43fe3d98e2b0bf, type: 3}
