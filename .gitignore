@@ -1,39 +1,51 @@
-/Library/cache/
-/Library/metadata/
-/Library/StateCache/
-/Library/ShaderCache/
-/Library/ScriptAssemblies/
-/Library/assetDatabase3
-/Library*.json
-/Library*.dwlt
-/Library/Artifacts/
-/Library/BurstCache/
-/Library/Temp/
-/Library/TempArtifacts/
-/Library/UIElements/
-/Library/ArtifactDB-lock
-/Library/SourceAssetDB
-/Library/SourceAssetDB-lock
-/Temp/
+# =============== #
+# Unity generated #
+# =============== #
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+ 
+# ======================================================= #
+# Visual Studio / MonoDevelop / Rider generated / Consulo #
+# ======================================================= #
+[Ee]xported[Oo]bj/
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln
+/*.user
+/*.unityproj
+/*.booproj
+/.idea*/
+/Debug/
 /obj/
-/Packages/
+/.idea/
 *.csproj
 *.sln
-*.log
-/Logs/
-/UIElementsSchema/
-/.vs/
-/Library/PackageCache/
-/.vscode/
-/Library/ArtifactDB
-/Library/Style.catalog
-/Library/CrashedAssetImports.txt
-/Library/APIUpdater/
-*.dwlt
-/Library/EditorInstance.json
-*.exe*.log
-/Library/InspectorExpandedItems.asset
-/Library/expandedItems
-/Library/ShaderCache.db
-/Library/SceneVisibilityState.asset
-/Library/LastSceneManagerSetup.txt
+/UnityPackageManager/
+/.consulo*/
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+
+#========#
+# Custom #
+#========#
+*.pdb
+*.pdb.meta
+/Assets/Temp*
+/Assets/Plugins/Editor/JetBrains/
+.*/
+builds/
