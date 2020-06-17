@@ -17,87 +17,51 @@ MonoBehaviour:
     slots: 0
     angle: 0
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-  - isHappy: 0
-    slots: 7
-    angle: -25
-    petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 3
-  - isHappy: 1
-    slots: 7
-    angle: -25
-    petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-  - isHappy: 1
-    slots: 7
-    angle: -25
-    petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
     - color: {r: 1, g: 0.5294118, b: 0, a: 1}
       showIndex: 3
@@ -105,657 +69,693 @@ MonoBehaviour:
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 1
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 2
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 1
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
+      showIndex: 2
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: -25
+    petals:
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
+      showIndex: 1
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 2
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 4
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 5
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 2
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: -25
     petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-  - isHappy: 1
-    slots: 7
-    angle: 0
-    petals:
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 3
-  - isHappy: 0
-    slots: 7
-    angle: 0
-    petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 1
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
-      showIndex: 2
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
-      showIndex: 3
-  - isHappy: 0
-    slots: 7
-    angle: 0
-    petals:
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
-      showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
-      showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 3
-  - isHappy: 0
-    slots: 7
-    angle: 0
-    petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
-      showIndex: 1
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
-      showIndex: 2
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
-      showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
-      showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 1, g: 0, b: 0.24705884, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.94117653, b: 1, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 1
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 2
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
-    - color: {r: 0, g: 0.5764706, b: 1, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 3
   - isHappy: 0
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 2
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 1
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 2
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
       showIndex: 3
   - isHappy: 1
     slots: 7
     angle: 0
     petals:
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
       showIndex: 1
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
       showIndex: 2
-    - color: {r: 0.023529414, g: 0.87843144, b: 0.13333334, a: 1}
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 0.45098042, g: 0, b: 1, a: 1}
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.5294118, b: 0, a: 1}
+    - color: {r: 0.5294118, g: 0.9450981, b: 0.87843144, a: 1}
       showIndex: 3
-    - color: {r: 1, g: 0.34901962, b: 0.36862746, a: 1}
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 1
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 2
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 3
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 3
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 3
+    - color: {r: 0.2392157, g: 0.72156864, b: 0.8313726, a: 1}
+      showIndex: 3
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 3
+  - isHappy: 0
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 1
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 2
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
+      showIndex: 3
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 3
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
+      showIndex: 3
+    - color: {r: 0.9215687, g: 0.627451, b: 0.75294125, a: 1}
+      showIndex: 3
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
+      showIndex: 3
+  - isHappy: 1
+    slots: 7
+    angle: 0
+    petals:
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 1
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
+      showIndex: 2
+    - color: {r: 0.5411765, g: 1, b: 0.427451, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+    - color: {r: 0.67058825, g: 0.5568628, b: 0.7490196, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.6313726, b: 0.43137258, a: 1}
+      showIndex: 3
+    - color: {r: 0.9725491, g: 0.8000001, b: 0.30980393, a: 1}
       showIndex: 3
