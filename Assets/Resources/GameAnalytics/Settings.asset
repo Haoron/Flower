@@ -30,7 +30,7 @@ MonoBehaviour:
   secretKey:
   - a0dc0a2bd0787400f6944dd7df69573492e8577a
   Build:
-  - 0.1
+  - 1.0
   SelectedPlatformOrganization:
   - Bik Pi-Pi
   SelectedPlatformStudio:
@@ -41,8 +41,17 @@ MonoBehaviour:
   SelectedOrganization: 01000000
   SelectedStudio: 01000000
   SelectedGame: 01000000
-  NewVersion: 
-  Changes: 
+  NewVersion: 6.2.1
+  Changes: '6.2.1
+
+    - added better error messages for API calls potentially being
+    removed in the future
+
+
+    6.2.0
+
+    - exposed functions to get AB testing
+    id and variant id'
   SignUpOpen: 0
   StudioName: 
   GameName: 
