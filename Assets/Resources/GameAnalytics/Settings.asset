@@ -30,7 +30,7 @@ MonoBehaviour:
   secretKey:
   - a0dc0a2bd0787400f6944dd7df69573492e8577a
   Build:
-  - 1.0
+  - 1.1
   SelectedPlatformOrganization:
   - Bik Pi-Pi
   SelectedPlatformStudio:
